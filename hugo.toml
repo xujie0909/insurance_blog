@@ -1,0 +1,57 @@
+baseURL = "http://39.106.208.29/"
+locale = "zh-cn"
+title = "保险知识博客"
+theme = "PaperMod"
+defaultContentLanguage = "zh"
+hasCJKLanguage = true
+paginate = 10
+
+[params]
+  env = "production"
+  title = "保险知识博客"
+  description = "专注保险知识分享，帮你读懂保险、买对保险"
+  keywords = ["保险", "医疗险", "寿险", "理财险"]
+  author = "博主"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  dateFormat = "2006-01-02"
+
+[params.homeInfoParams]
+  Title = "欢迎来到保险知识博客"
+  Content = "这里有最实用的保险攻略，帮你少踩坑、买对险。"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 40
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
