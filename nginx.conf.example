@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_name _;   # 替换为你的域名，如: server_name example.com www.example.com;
+
+    root /var/www/blog;
+    index index.html;
+
+    # 静态资源缓存
+    location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+    }
+
+    location / {
+        try_files $uri $uri/ $uri.html =404;
+    }
+
+    # 自定义 404 页面
+    error_page 404 /404.html;
+}
