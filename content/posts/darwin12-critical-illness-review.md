@@ -10,6 +10,14 @@ cover:
   alt: "达尔文12号重大疾病保险深度解析"
 ---
 
+{{< rawhtml >}}
+<a href="/pages/darwin12/" target="_blank" style="display:block;margin:0 0 28px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#0a1628);border:1px solid rgba(79,172,254,0.35);border-radius:14px;text-decoration:none;color:inherit;">
+  <div style="font-size:11px;color:#4facfe;font-weight:600;letter-spacing:.5px;margin-bottom:6px;">📊 互动版保障详解</div>
+  <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">达尔文12号 · 完整责任解析 H5 页面</div>
+  <div style="font-size:13px;color:rgba(255,255,255,0.55);">120种重疾 · 赔付场景测算 · 病种清单 · 理赔流程 → 点击查看精美互动版</div>
+</a>
+{{< /rawhtml >}}
+
 ## 先问你一个扎心的问题
 
 如果你明天被确诊癌症，你家的存款，能撑多久？

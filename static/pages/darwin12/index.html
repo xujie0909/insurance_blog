@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>达尔文12号 · 重大疾病保险 · 全面保障解析</title>
+<style>
+/* =========================================
+   RESET & BASE
+========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep:     #060812;
+  --bg-card:     rgba(255,255,255,0.05);
+  --bg-card-h:   rgba(255,255,255,0.09);
+  --border:      rgba(255,255,255,0.10);
+  --border-h:    rgba(255,255,255,0.22);
+
+  --blue-a:   #4facfe;
+  --blue-b:   #00f2fe;
+  --purple-a: #667eea;
+  --purple-b: #764ba2;
+  --gold-a:   #f6d365;
+  --gold-b:   #fda085;
+  --red-a:    #ff6b6b;
+  --red-b:    #ee0979;
+  --green-a:  #43e97b;
+  --green-b:  #38f9d7;
+
+  --text-1: #ffffff;
+  --text-2: rgba(255,255,255,0.75);
+  --text-3: rgba(255,255,255,0.50);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+
+  --blur: blur(20px);
+  --shadow: 0 8px 40px rgba(0,0,0,0.5);
+  --shadow-glow-blue: 0 0 40px rgba(79,172,254,0.25);
+  --shadow-glow-gold: 0 0 40px rgba(246,211,101,0.25);
+
+  --font: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,-apple-system,sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-1);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   ANIMATED BACKGROUND ORBS
+========================================= */
+.bg-canvas {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+}
+.orb {
+  position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.45;
+  animation: orb-drift 18s ease-in-out infinite;
+}
+.orb-1 { width:520px;height:520px; background:radial-gradient(circle,#4facfe,transparent 70%);
+  top:-120px; left:-80px; animation-delay:0s; }
+.orb-2 { width:420px;height:420px; background:radial-gradient(circle,#764ba2,transparent 70%);
+  top:40%;right:-100px; animation-delay:-6s; }
+.orb-3 { width:360px;height:360px; background:radial-gradient(circle,#f6d365,transparent 70%);
+  bottom:-80px;left:30%; animation-delay:-12s; }
+.orb-4 { width:280px;height:280px; background:radial-gradient(circle,#43e97b,transparent 70%);
+  bottom:20%;left:-60px; animation-delay:-4s; opacity:0.30; }
+
+@keyframes orb-drift {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(40px,-30px) scale(1.08); }
+  66%      { transform: translate(-25px,45px) scale(0.95); }
+}
+
+/* =========================================
+   LAYOUT WRAPPER
+========================================= */
+.wrap { position:relative; z-index:1; max-width:480px; margin:0 auto; padding:0 16px 80px; }
+
+/* =========================================
+   GLASS CARD BASE
+========================================= */
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-radius: var(--radius-md);
+  transition: border-color .3s, background .3s, box-shadow .3s;
+}
+.glass:hover { border-color: var(--border-h); background: var(--bg-card-h); }
+
+/* =========================================
+   GRADIENT TEXT UTILITY
+========================================= */
+.grad-blue  { background: linear-gradient(135deg,var(--blue-a),var(--blue-b));   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.grad-gold  { background: linear-gradient(135deg,var(--gold-a),var(--gold-b));   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.grad-purple{ background: linear-gradient(135deg,var(--purple-a),var(--purple-b));-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.grad-green { background: linear-gradient(135deg,var(--green-a),var(--green-b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.grad-red   { background: linear-gradient(135deg,var(--red-a),var(--red-b));     -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* =========================================
+   SECTION SPACING
+========================================= */
+section { margin-bottom: 24px; }
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+  padding: 56px 28px 44px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(79,172,254,0.12), rgba(118,75,162,0.12));
+  border: 1px solid rgba(79,172,254,0.25);
+  position: relative; overflow: hidden;
+  margin-top: 24px;
+}
+.hero::before {
+  content:''; position:absolute; inset:-1px;
+  background: linear-gradient(135deg,rgba(79,172,254,0.3),transparent 50%,rgba(118,75,162,0.3));
+  border-radius: inherit; z-index:0; pointer-events:none;
+}
+.hero > * { position: relative; z-index:1; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg,rgba(79,172,254,0.2),rgba(118,75,162,0.2));
+  border: 1px solid rgba(79,172,254,0.4);
+  border-radius: 999px; padding: 4px 14px;
+  font-size: 12px; color: var(--blue-a); font-weight: 600;
+  letter-spacing: .5px; margin-bottom: 20px;
+}
+.hero-badge::before { content:'◉'; font-size:8px; }
+
+.hero h1 { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
+.hero-sub {
+  font-size: 13px; color: var(--text-3); margin-bottom: 28px; letter-spacing: .3px;
+}
+.hero-divider {
+  display:flex; align-items:center; gap:10px; margin-bottom:24px;
+}
+.hero-divider::before,.hero-divider::after {
+  content:''; flex:1; height:1px;
+  background: linear-gradient(90deg,transparent,rgba(79,172,254,0.4),transparent);
+}
+.hero-divider span { font-size:11px; color:var(--text-3); white-space:nowrap; }
+
+/* 3 核心数字 */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+}
+.hero-stat {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  padding: 14px 8px;
+}
+.hero-stat-num { font-size: 26px; font-weight: 800; line-height:1; }
+.hero-stat-unit { font-size:11px; color:var(--text-3); margin-top:4px; }
+
+/* CTA */
+.btn-primary {
+  display: block; width: 100%; margin-top: 28px;
+  padding: 16px;
+  background: linear-gradient(135deg,var(--blue-a),var(--purple-a));
+  border: none; border-radius: var(--radius-sm);
+  font-size: 16px; font-weight: 700; color: #fff;
+  text-align: center; cursor: pointer;
+  box-shadow: 0 4px 24px rgba(79,172,254,0.4);
+  transition: transform .2s, box-shadow .2s;
+  letter-spacing:.5px;
+}
+.btn-primary:active { transform: scale(0.97); }
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+.sec-label {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+}
+.sec-label-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: grid; place-items: center; font-size: 18px; flex-shrink: 0;
+}
+.sec-label h2 { font-size: 18px; font-weight: 700; }
+.sec-label p  { font-size: 12px; color: var(--text-3); margin-top:1px; }
+
+/* =========================================
+   RISK ALERT CARD
+========================================= */
+.risk-card {
+  padding: 24px;
+  border-left: 3px solid var(--red-a);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg,rgba(238,9,121,0.08),rgba(255,107,107,0.05));
+  border-top-color: rgba(255,107,107,0.15);
+  border-right-color: rgba(255,107,107,0.08);
+  border-bottom-color: rgba(255,107,107,0.08);
+}
+.risk-card h3 {
+  font-size: 16px; font-weight: 700; margin-bottom: 12px;
+}
+.risk-list { list-style: none; }
+.risk-list li {
+  display: flex; gap:10px; align-items:flex-start;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px; color: var(--text-2);
+}
+.risk-list li:last-child { border-bottom: none; }
+.risk-list li::before {
+  content:'⚡'; font-size:14px; flex-shrink:0; margin-top:1px;
+}
+.risk-highlight {
+  margin-top: 16px; padding: 12px 16px;
+  background: rgba(255,107,107,0.10);
+  border: 1px solid rgba(255,107,107,0.20);
+  border-radius: 10px; font-size: 13px; color: var(--red-a);
+  font-weight: 600; text-align:center;
+}
+
+/* =========================================
+   COVERAGE OVERVIEW — BENTO GRID
+========================================= */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.bento-item {
+  padding: 20px 16px;
+  border-radius: var(--radius-md);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 130px;
+}
+.bento-item.wide { grid-column: span 2; min-height: 100px; }
+
+.bento-item .bi-num {
+  font-size: 36px; font-weight: 800; line-height: 1; margin-bottom: 6px;
+}
+.bento-item .bi-title { font-size: 14px; font-weight: 700; }
+.bento-item .bi-desc  { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+.bento-item .bi-tag {
+  display: inline-flex; align-items: center; gap:4px;
+  font-size: 10px; padding: 3px 8px; border-radius: 999px;
+  background: rgba(255,255,255,0.10); color: var(--text-2);
+  margin-top: 10px; width: fit-content;
+}
+
+.bi-blue   { background: linear-gradient(135deg,rgba(79,172,254,0.15),rgba(0,242,254,0.08)); border:1px solid rgba(79,172,254,0.25); }
+.bi-purple { background: linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.08)); border:1px solid rgba(102,126,234,0.25); }
+.bi-gold   { background: linear-gradient(135deg,rgba(246,211,101,0.15),rgba(253,160,133,0.08)); border:1px solid rgba(246,211,101,0.25); }
+.bi-green  { background: linear-gradient(135deg,rgba(67,233,123,0.12),rgba(56,249,215,0.08)); border:1px solid rgba(67,233,123,0.20); }
+.bi-dark   { background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); }
+
+/* =========================================
+   COVERAGE DETAIL CARDS
+========================================= */
+.coverage-card {
+  padding: 22px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  position: relative; overflow: hidden;
+}
+.coverage-card .cc-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.cc-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: grid; place-items: center; font-size: 22px; flex-shrink:0;
+}
+.cc-title-wrap h3 { font-size: 17px; font-weight: 700; }
+.cc-title-wrap p  { font-size: 12px; color: var(--text-3); }
+
+.pay-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; border-radius: 10px; margin-bottom: 6px;
+  background: rgba(0,0,0,0.25);
+}
+.pay-row-label { font-size: 13px; color: var(--text-2); }
+.pay-row-val   { font-size: 16px; font-weight: 700; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tag {
+  font-size: 11px; padding: 4px 10px; border-radius: 999px;
+  font-weight: 500;
+}
+.tag-blue   { background:rgba(79,172,254,0.15); color:var(--blue-a); border:1px solid rgba(79,172,254,0.3); }
+.tag-gold   { background:rgba(246,211,101,0.15); color:var(--gold-a); border:1px solid rgba(246,211,101,0.3); }
+.tag-green  { background:rgba(67,233,123,0.15); color:var(--green-a); border:1px solid rgba(67,233,123,0.3); }
+.tag-purple { background:rgba(118,75,162,0.20); color:#a78bfa;         border:1px solid rgba(118,75,162,0.4); }
+.tag-red    { background:rgba(255,107,107,0.15); color:var(--red-a);  border:1px solid rgba(255,107,107,0.3); }
+
+.note-box {
+  margin-top: 12px; padding: 10px 14px;
+  background: rgba(255,255,255,0.04); border-radius: 8px;
+  font-size: 12px; color: var(--text-3);
+  border-left: 2px solid rgba(255,255,255,0.15);
+}
+
+/* Progress bar */
+.pct-bar { margin-top: 14px; }
+.pct-bar-label {
+  display:flex; justify-content:space-between;
+  font-size:12px; color:var(--text-3); margin-bottom:6px;
+}
+.pct-track {
+  height: 6px; border-radius: 999px;
+  background: rgba(255,255,255,0.08); overflow:hidden;
+}
+.pct-fill {
+  height: 100%; border-radius: 999px;
+  transition: width 1.4s cubic-bezier(.22,1,.36,1);
+}
+
+/* =========================================
+   DISEASE LIST — ACCORDION
+========================================= */
+.disease-section { }
+.disease-group {
+  border-radius: var(--radius-md);
+  overflow: hidden; margin-bottom: 10px;
+  border: 1px solid var(--border);
+}
+.disease-group-header {
+  display: flex; justify-content:space-between; align-items:center;
+  padding: 16px 18px; cursor: pointer;
+  background: rgba(255,255,255,0.04);
+  transition: background .2s;
+  user-select: none;
+}
+.disease-group-header:active { background: rgba(255,255,255,0.08); }
+.dg-left { display:flex; align-items:center; gap:12px; }
+.dg-dot { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+.dg-title { font-size:15px; font-weight:600; }
+.dg-count {
+  font-size:11px; padding:2px 8px; border-radius:999px;
+  background:rgba(255,255,255,0.08); color:var(--text-3);
+}
+.dg-arrow { font-size:12px; color:var(--text-3); transition:transform .3s; }
+.disease-group.open .dg-arrow { transform: rotate(180deg); }
+.disease-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s cubic-bezier(.22,1,.36,1);
+}
+.disease-group.open .disease-body { max-height: 800px; }
+.disease-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.disease-item {
+  background: var(--bg-deep); padding: 10px 14px;
+  font-size: 13px; color: var(--text-2);
+  display: flex; align-items: center; gap: 6px;
+}
+.disease-item::before { content:'·'; font-size:20px; color:inherit; line-height:1; }
+.disease-item.highlight { color: var(--text-1); font-weight:500; }
+
+/* =========================================
+   OPTIONAL BENEFITS — CARD LIST
+========================================= */
+.opt-card {
+  padding: 20px; border-radius: var(--radius-md); margin-bottom: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  position: relative; overflow: hidden;
+}
+.opt-card::before {
+  content:''; position:absolute;
+  top:0;left:0;right:0; height:2px;
+}
+.opt-blue::before   { background:linear-gradient(90deg,var(--blue-a),var(--blue-b)); }
+.opt-gold::before   { background:linear-gradient(90deg,var(--gold-a),var(--gold-b)); }
+.opt-green::before  { background:linear-gradient(90deg,var(--green-a),var(--green-b)); }
+.opt-purple::before { background:linear-gradient(90deg,var(--purple-a),var(--purple-b)); }
+.opt-red::before    { background:linear-gradient(90deg,var(--red-a),var(--red-b)); }
+
+.opt-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; }
+.opt-name { font-size:16px; font-weight:700; }
+.opt-badge {
+  font-size:10px; padding:3px 10px; border-radius:999px;
+  font-weight:600;
+}
+.opt-desc { font-size:13px; color:var(--text-2); line-height:1.6; }
+
+.benefit-table { margin-top:12px; border-radius:10px; overflow:hidden; }
+.bt-row {
+  display:flex; justify-content:space-between;
+  padding:9px 14px; background:rgba(0,0,0,0.25);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  font-size:13px;
+}
+.bt-row:last-child { border-bottom:none; }
+.bt-row-key { color:var(--text-3); }
+.bt-row-val { font-weight:600; }
+
+/* =========================================
+   SCENARIO CALCULATOR
+========================================= */
+.calc-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg,rgba(246,211,101,0.08),rgba(253,160,133,0.06));
+  border: 1px solid rgba(246,211,101,0.20);
+}
+.calc-title { font-size:17px; font-weight:700; margin-bottom:4px; }
+.calc-sub   { font-size:12px; color:var(--text-3); margin-bottom:20px; }
+
+.scenario { margin-bottom:14px; }
+.scenario-head {
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;
+}
+.scenario-name { font-size:14px; font-weight:600; }
+.scenario-total {
+  font-size:18px; font-weight:800;
+}
+.scenario-bar {
+  height: 8px; border-radius: 999px;
+  background: rgba(255,255,255,0.08); overflow:hidden; margin-bottom:4px;
+}
+.scenario-fill {
+  height: 100%; border-radius: 999px;
+  transition: width 1.4s cubic-bezier(.22,1,.36,1);
+}
+.scenario-note { font-size:11px; color:var(--text-3); }
+.scenario-divider { height:1px; background:rgba(255,255,255,0.06); margin:12px 0; }
+
+.calc-note {
+  margin-top:16px; padding:12px 16px;
+  background:rgba(246,211,101,0.08); border-radius:10px;
+  font-size:12px; color:var(--gold-a); border:1px solid rgba(246,211,101,0.15);
+  text-align:center;
+}
+
+/* =========================================
+   EXCLUSION SECTION
+========================================= */
+.exclusion-grid {
+  display: grid; grid-template-columns:1fr 1fr; gap:8px;
+}
+.excl-item {
+  padding: 14px; border-radius: var(--radius-sm);
+  background: rgba(255,107,107,0.06); border:1px solid rgba(255,107,107,0.12);
+  font-size: 13px; color: var(--text-2);
+  display:flex; gap:8px; align-items:flex-start;
+}
+.excl-item-icon { font-size:16px; flex-shrink:0; }
+.excl-note {
+  margin-top:10px; padding:12px 16px;
+  background:rgba(79,172,254,0.06); border:1px solid rgba(79,172,254,0.12);
+  border-radius:10px; font-size:12px; color:var(--blue-a);
+}
+
+/* =========================================
+   TIMELINE — WAITING / COOLING
+========================================= */
+.timeline { padding: 4px 0; }
+.tl-item {
+  display:flex; gap:14px; padding-bottom:20px; position:relative;
+}
+.tl-item:last-child { padding-bottom:0; }
+.tl-left { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+.tl-dot {
+  width:14px; height:14px; border-radius:50%; flex-shrink:0;
+  border:2px solid;
+}
+.tl-line {
+  width:2px; flex:1; background:rgba(255,255,255,0.08); margin-top:4px;
+}
+.tl-item:last-child .tl-line { display:none; }
+.tl-content { padding-top:0; }
+.tl-title { font-size:15px; font-weight:600; margin-bottom:4px; }
+.tl-desc { font-size:13px; color:var(--text-2); }
+
+/* =========================================
+   PROCESS STEPS
+========================================= */
+.steps { display:flex; flex-direction:column; gap:0; }
+.step-item {
+  display:flex; gap:14px; padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.step-item:last-child { border-bottom:none; }
+.step-num {
+  width:32px; height:32px; border-radius:50%; flex-shrink:0;
+  display:grid; place-items:center; font-size:14px; font-weight:700;
+  background: linear-gradient(135deg,var(--blue-a),var(--purple-a));
+  color:#fff;
+}
+.step-content h4 { font-size:15px; font-weight:600; margin-bottom:4px; }
+.step-content p  { font-size:13px; color:var(--text-2); }
+
+/* =========================================
+   KV SUMMARY TABLE
+========================================= */
+.kv-table { border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border); }
+.kv-row {
+  display:flex; border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.kv-row:last-child { border-bottom:none; }
+.kv-key {
+  width: 38%; background:rgba(255,255,255,0.04); padding:12px 14px;
+  font-size:13px; color:var(--text-3); display:flex; align-items:center;
+  border-right:1px solid rgba(255,255,255,0.05);
+}
+.kv-val {
+  flex:1; padding:12px 14px; font-size:13px; color:var(--text-1);
+  font-weight:500; display:flex; align-items:center;
+}
+
+/* =========================================
+   TRUST BADGES
+========================================= */
+.trust-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:16px; }
+.trust-item {
+  text-align:center; padding:16px 8px;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--radius-sm);
+}
+.trust-icon { font-size:24px; margin-bottom:6px; }
+.trust-label { font-size:11px; color:var(--text-3); line-height:1.4; }
+
+/* =========================================
+   STICKY BOTTOM BAR
+========================================= */
+.bottom-bar {
+  position:fixed; bottom:0; left:0; right:0; z-index:100;
+  background:rgba(6,8,18,0.85); backdrop-filter:blur(24px);
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding: 12px 20px 24px; max-width:100%;
+}
+.bottom-bar-inner {
+  max-width:480px; margin:0 auto;
+  display:flex; gap:10px; align-items:center;
+}
+.bottom-price { flex:1; }
+.bottom-price-label { font-size:11px; color:var(--text-3); }
+.bottom-price-val { font-size:22px; font-weight:800; }
+.bottom-price-unit { font-size:12px; color:var(--text-3); margin-left:2px; }
+.btn-cta {
+  padding:14px 28px; border-radius:var(--radius-sm); border:none;
+  background:linear-gradient(135deg,var(--blue-a),var(--purple-a));
+  font-size:15px; font-weight:700; color:#fff; cursor:pointer;
+  box-shadow:0 4px 20px rgba(79,172,254,0.35);
+  white-space:nowrap;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn-cta:active { transform:scale(0.96); box-shadow:0 2px 10px rgba(79,172,254,0.2); }
+
+/* =========================================
+   FLOATING NAV PILLS
+========================================= */
+.nav-pills {
+  display:flex; gap:6px; overflow-x:auto; padding:4px 0 8px;
+  scrollbar-width:none; margin-bottom:4px;
+}
+.nav-pills::-webkit-scrollbar { display:none; }
+.nav-pill {
+  flex-shrink:0; padding:6px 14px; border-radius:999px; font-size:12px;
+  background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.10);
+  color:var(--text-2); cursor:pointer; text-decoration:none;
+  transition: background .2s, border-color .2s, color .2s;
+  white-space:nowrap;
+}
+.nav-pill.active,
+.nav-pill:hover {
+  background:rgba(79,172,254,0.15); border-color:rgba(79,172,254,0.40); color:var(--blue-a);
+}
+
+/* =========================================
+   FADE-IN ANIMATION
+========================================= */
+.fade-up {
+  opacity:0; transform:translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* =========================================
+   DISCLAIMER
+========================================= */
+.disclaimer {
+  margin-top:24px; padding:16px;
+  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);
+  border-radius:var(--radius-sm); font-size:11px; color:var(--text-3); line-height:1.7;
+}
+
+/* =========================================
+   RESPONSIVE TWEAKS
+========================================= */
+@media(max-width:360px){
+  .hero h1 { font-size:26px; }
+  .bento-grid { grid-template-columns:1fr; }
+  .bento-item.wide { grid-column:span 1; }
+  .exclusion-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== BACKGROUND ===================== -->
+<div class="bg-canvas">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- ====== NAV PILLS ====== -->
+  <nav class="nav-pills" id="nav" style="position:sticky;top:0;z-index:50;padding-top:16px;background:linear-gradient(to bottom,var(--bg-deep) 60%,transparent);">
+    <a class="nav-pill active" href="#coverage">保障范围</a>
+    <a class="nav-pill" href="#disease">病种列表</a>
+    <a class="nav-pill" href="#optional">可选责任</a>
+    <a class="nav-pill" href="#scenario">赔付测算</a>
+    <a class="nav-pill" href="#notice">投保须知</a>
+    <a class="nav-pill" href="#claim">理赔流程</a>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="fade-up">
+    <div class="hero">
+      <div class="hero-badge">复星联合健康保险 · 旗舰产品</div>
+      <h1><span class="grad-blue">达尔文</span><span class="grad-gold">12号</span></h1>
+      <p class="hero-sub">复星联合优选K重大疾病保险（互联网）</p>
+      <div class="hero-divider"><span>全面保障 · 多次赔付 · 终身有效</span></div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num grad-blue" data-count="120">0</div>
+          <div class="hero-stat-unit">种重大疾病</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num grad-gold" data-count="30">0</div>
+          <div class="hero-stat-unit">种中度疾病</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num grad-green" data-count="45">0</div>
+          <div class="hero-stat-unit">种轻度疾病</div>
+        </div>
+      </div>
+      <button class="btn-primary">立即了解详情 →</button>
+    </div>
+  </section>
+
+  <!-- ====== RISK ALERT ====== -->
+  <section class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(255,107,107,0.15);">⚠️</div>
+      <div><h2>面对重疾，你准备好了吗？</h2><p>每一个数字，都是真实的家庭故事</p></div>
+    </div>
+    <div class="risk-card glass">
+      <h3 class="grad-red">重大疾病的真实代价</h3>
+      <ul class="risk-list">
+        <li>中国每年新增癌症患者约 <strong>482 万人</strong>，平均每分钟就有 9 人被确诊</li>
+        <li>肺癌靶向治疗年费用 <strong>12~36 万元</strong>，且需持续用药</li>
+        <li>白血病骨髓移植全程费用 <strong>40~100 万元</strong>，还需长期随访</li>
+        <li>脑中风后康复期平均 <strong>2~5 年</strong>，丧失劳动能力，家庭收入骤降</li>
+        <li>重疾患者平均需要 <strong>3~5 年</strong>才能恢复正常工作，这期间谁来养家？</li>
+      </ul>
+      <div class="risk-highlight">
+        🔥 重大疾病，打垮的不只是身体，是整个家庭的现金流
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COVERAGE OVERVIEW ====== -->
+  <section id="coverage" class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(79,172,254,0.15);">🛡️</div>
+      <div><h2>保障全景一览</h2><p>必选 + 可选，构建立体防护网</p></div>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-item bi-blue">
+        <div>
+          <div class="bi-num grad-blue">120</div>
+          <div class="bi-title">重大疾病</div>
+          <div class="bi-desc">含行业协会28种标准病 + 92种扩展病</div>
+        </div>
+        <div class="bi-tag">📌 必选责任</div>
+      </div>
+      <div class="bento-item bi-purple">
+        <div>
+          <div class="bi-num grad-purple">30</div>
+          <div class="bi-title">中度疾病</div>
+          <div class="bi-desc">赔60%保额，最多3次</div>
+        </div>
+        <div class="bi-tag">📌 必选责任</div>
+      </div>
+      <div class="bento-item bi-green">
+        <div>
+          <div class="bi-num grad-green">45</div>
+          <div class="bi-title">轻度疾病</div>
+          <div class="bi-desc">赔30%保额，最多4次</div>
+        </div>
+        <div class="bi-tag">📌 必选责任</div>
+      </div>
+      <div class="bento-item bi-gold">
+        <div>
+          <div class="bi-num grad-gold">∞</div>
+          <div class="bi-title">保费豁免</div>
+          <div class="bi-desc">确诊即免后续全部保费</div>
+        </div>
+        <div class="bi-tag">📌 必选责任</div>
+      </div>
+      <div class="bento-item bi-dark wide" style="min-height:80px;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;">
+        <div>
+          <div class="bi-title" style="font-size:15px;">住院津贴</div>
+          <div class="bi-desc">60周岁后触发，每天赔 0.1% 保额</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="bi-num grad-gold" style="font-size:24px;">90天</div>
+          <div class="bi-desc">每年上限</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MANDATORY COVERAGE DETAIL ====== -->
+  <section class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(79,172,254,0.15);">📋</div>
+      <div><h2>必选责任详解</h2><p>买就有，不需要额外选择</p></div>
+    </div>
+
+    <!-- 重大疾病 -->
+    <div class="coverage-card glass bi-blue" style="margin-bottom:10px;">
+      <div class="cc-header">
+        <div class="cc-icon" style="background:rgba(79,172,254,0.15);">🎗️</div>
+        <div class="cc-title-wrap">
+          <h3>首次重大疾病保险金</h3>
+          <p>120种重大疾病 · 一次性赔付</p>
+        </div>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">普通疾病确诊（等待期后）</span>
+        <span class="pay-row-val grad-blue">100% 保额</span>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">意外伤害导致的重大疾病</span>
+        <span class="pay-row-val grad-gold">135% 保额 ✦</span>
+      </div>
+      <div class="pct-bar">
+        <div class="pct-bar-label"><span>普通确诊赔付率</span><span>100%</span></div>
+        <div class="pct-track"><div class="pct-fill" data-width="100" style="width:0;background:linear-gradient(90deg,var(--blue-a),var(--blue-b));"></div></div>
+      </div>
+      <div class="pct-bar" style="margin-top:8px;">
+        <div class="pct-bar-label"><span>意外导致赔付率（相对100%）</span><span>135%</span></div>
+        <div class="pct-track"><div class="pct-fill" data-width="100" style="width:0;background:linear-gradient(90deg,var(--gold-a),var(--gold-b));"></div></div>
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-blue">含癌症</span>
+        <span class="tag tag-blue">含心肌梗死</span>
+        <span class="tag tag-blue">含脑中风</span>
+        <span class="tag tag-blue">含器官移植</span>
+        <span class="tag tag-blue">+116种</span>
+      </div>
+      <div class="note-box">💡 赔付以"初次发生"为标准，即您一生中第一次确诊，无论确诊哪种，一次性给付对应比例保额。赔付后本项责任终止。</div>
+    </div>
+
+    <!-- 中度疾病 -->
+    <div class="coverage-card glass bi-purple" style="margin-bottom:10px;">
+      <div class="cc-header">
+        <div class="cc-icon" style="background:rgba(102,126,234,0.15);">🔶</div>
+        <div class="cc-title-wrap">
+          <h3>中度疾病保险金</h3>
+          <p>30种 · 每次60%保额 · 最多3次</p>
+        </div>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">每次确诊中度疾病</span>
+        <span class="pay-row-val grad-purple">60% 保额</span>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">最高累计赔付次数</span>
+        <span class="pay-row-val">3 次</span>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">重症赔付后是否继续有效</span>
+        <span class="pay-row-val grad-green">✓ 继续有效</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-purple">轻度心梗</span>
+        <span class="tag tag-purple">轻度脑中风</span>
+        <span class="tag tag-purple">早期肝硬化</span>
+        <span class="tag tag-purple">+27种</span>
+      </div>
+      <div class="note-box">💡 即使已经赔过重大疾病保险金，中度疾病责任仍继续有效（次数未达上限时），两者互不影响。这是达尔文12号的重要优势。</div>
+    </div>
+
+    <!-- 轻度疾病 -->
+    <div class="coverage-card glass bi-green" style="margin-bottom:10px;">
+      <div class="cc-header">
+        <div class="cc-icon" style="background:rgba(67,233,123,0.15);">🔷</div>
+        <div class="cc-title-wrap">
+          <h3>轻度疾病保险金</h3>
+          <p>45种 · 每次30%保额 · 最多4次</p>
+        </div>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">每次确诊轻度疾病</span>
+        <span class="pay-row-val grad-green">30% 保额</span>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">最高累计赔付次数</span>
+        <span class="pay-row-val">4 次</span>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">意外伤害是否有等待期</span>
+        <span class="pay-row-val grad-green">✓ 无等待期</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-green">原位癌</span>
+        <span class="tag tag-green">轻度甲状腺癌</span>
+        <span class="tag tag-green">早期前列腺癌</span>
+        <span class="tag tag-green">+42种</span>
+      </div>
+      <div class="note-box">💡 轻症疾病不等于"小病"——轻度甲状腺癌手术费就要数万元，轻症赔付解决的正是这类"不够重但也不轻松"的费用缺口。</div>
+    </div>
+
+    <!-- 疾病豁免 -->
+    <div class="coverage-card glass" style="margin-bottom:10px;border:1px solid rgba(67,233,123,0.2);background:linear-gradient(135deg,rgba(67,233,123,0.06),rgba(56,249,215,0.04));">
+      <div class="cc-header">
+        <div class="cc-icon" style="background:rgba(67,233,123,0.15);">💎</div>
+        <div class="cc-title-wrap">
+          <h3>疾病豁免保险费</h3>
+          <p>生病了不用再交钱，保险照样保你</p>
+        </div>
+      </div>
+      <div class="pay-row" style="background:rgba(67,233,123,0.08);">
+        <span class="pay-row-label">触发条件</span>
+        <span class="pay-row-val" style="font-size:13px;">确诊轻/中/重症并获赔</span>
+      </div>
+      <div class="pay-row">
+        <span class="pay-row-label">豁免内容</span>
+        <span class="pay-row-val grad-green">此后全部剩余保费</span>
+      </div>
+      <div class="note-box">💡 举例：30年缴费期，第10年确诊癌症，剩余20年保费全部豁免，但保险合同继续有效，仍可继续赔付中度、轻度疾病。等于说，保险公司帮你把后面的钱垫上了。</div>
+    </div>
+  </section>
+
+  <!-- ====== DISEASE LIST ====== -->
+  <section id="disease" class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(246,211,101,0.15);">📋</div>
+      <div><h2>病种清单</h2><p>全面覆盖高发及罕见重大疾病</p></div>
+    </div>
+
+    <div class="disease-section">
+
+      <div class="disease-group glass open">
+        <div class="disease-group-header" onclick="toggleGroup(this)">
+          <div class="dg-left">
+            <div class="dg-dot" style="background:var(--red-a);"></div>
+            <span class="dg-title">重大疾病（120种）— 核心高发病</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="dg-count">全部覆盖</span>
+            <span class="dg-arrow">▼</span>
+          </div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-grid">
+            <div class="disease-item highlight">恶性肿瘤（重度）</div>
+            <div class="disease-item highlight">较重急性心肌梗死</div>
+            <div class="disease-item highlight">严重脑中风后遗症</div>
+            <div class="disease-item highlight">冠状动脉搭桥术</div>
+            <div class="disease-item highlight">重大器官移植术</div>
+            <div class="disease-item highlight">造血干细胞移植术</div>
+            <div class="disease-item highlight">严重慢性肾衰竭</div>
+            <div class="disease-item highlight">多个肢体缺失</div>
+            <div class="disease-item">急性重症肝炎</div>
+            <div class="disease-item">严重非恶性颅内肿瘤</div>
+            <div class="disease-item">严重慢性肝衰竭</div>
+            <div class="disease-item">严重脑炎/脑膜炎后遗症</div>
+            <div class="disease-item">深度昏迷</div>
+            <div class="disease-item">双耳失聪</div>
+            <div class="disease-item">双目失明</div>
+            <div class="disease-item">瘫痪</div>
+            <div class="disease-item">心脏瓣膜手术</div>
+            <div class="disease-item">严重阿尔茨海默病</div>
+            <div class="disease-item">严重脑损伤</div>
+            <div class="disease-item">严重原发性帕金森病</div>
+            <div class="disease-item">严重Ⅲ度烧伤</div>
+            <div class="disease-item">严重特发性肺动脉高压</div>
+            <div class="disease-item">严重运动神经元病</div>
+            <div class="disease-item">语言能力丧失</div>
+            <div class="disease-item">重型再生障碍性贫血</div>
+            <div class="disease-item">严重原发性心肌病</div>
+            <div class="disease-item">良性脑肿瘤（术后）</div>
+            <div class="disease-item">HIV感染（医疗/职业）</div>
+            <div class="disease-item" style="grid-column:span 2;text-align:center;color:var(--text-3);font-size:12px;padding:12px;">
+              ··· 共120种，含行业标准28种 + 达尔文自主扩展92种 ···
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="disease-group glass">
+        <div class="disease-group-header" onclick="toggleGroup(this)">
+          <div class="dg-left">
+            <div class="dg-dot" style="background:var(--purple-a);"></div>
+            <span class="dg-title">中度疾病（30种）— 重症前的防线</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="dg-count">60% 保额</span>
+            <span class="dg-arrow">▼</span>
+          </div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-grid">
+            <div class="disease-item">不符合重症标准的心梗</div>
+            <div class="disease-item">轻度脑中风（有遗症）</div>
+            <div class="disease-item">早期肝硬化</div>
+            <div class="disease-item">中度慢性肾衰竭</div>
+            <div class="disease-item">中度心脏瓣膜病</div>
+            <div class="disease-item">早期阿尔茨海默病</div>
+            <div class="disease-item">中度帕金森病</div>
+            <div class="disease-item">慢性活动性肝炎</div>
+            <div class="disease-item">中度慢性阻塞性肺病</div>
+            <div class="disease-item">周围神经系统病变</div>
+            <div class="disease-item" style="grid-column:span 2;text-align:center;color:var(--text-3);font-size:12px;padding:12px;">
+              ··· 共30种，最多可赔付3次 ···
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="disease-group glass">
+        <div class="disease-group-header" onclick="toggleGroup(this)">
+          <div class="dg-left">
+            <div class="dg-dot" style="background:var(--green-a);"></div>
+            <span class="dg-title">轻度疾病（45种）— 早期发现保障</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="dg-count">30% 保额</span>
+            <span class="dg-arrow">▼</span>
+          </div>
+        </div>
+        <div class="disease-body">
+          <div class="disease-grid">
+            <div class="disease-item">轻度甲状腺癌（TNM I期）</div>
+            <div class="disease-item">原位癌（多部位）</div>
+            <div class="disease-item">早期前列腺癌（T1期）</div>
+            <div class="disease-item">皮肤恶性肿瘤（未转移）</div>
+            <div class="disease-item">轻度急性心肌梗死</div>
+            <div class="disease-item">微小脑中风（无遗症）</div>
+            <div class="disease-item">轻度肾衰竭</div>
+            <div class="disease-item">轻度慢性肝衰竭</div>
+            <div class="disease-item">早期心肌炎</div>
+            <div class="disease-item">早期帕金森病</div>
+            <div class="disease-item" style="grid-column:span 2;text-align:center;color:var(--text-3);font-size:12px;padding:12px;">
+              ··· 共45种，最多可赔付4次 ···
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== OPTIONAL BENEFITS ====== -->
+  <section id="optional" class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(246,211,101,0.15);">⭐</div>
+      <div><h2>可选责任</h2><p>按需加选，最大化保障</p></div>
+    </div>
+
+    <!-- 疾病关爱金 -->
+    <div class="opt-card opt-gold">
+      <div class="opt-header">
+        <div class="opt-name">疾病关爱保险金</div>
+        <span class="opt-badge" style="background:rgba(246,211,101,0.15);color:var(--gold-a);border:1px solid rgba(246,211,101,0.3);">60岁前专属</span>
+      </div>
+      <div class="opt-desc">在基础赔付之上额外给付关爱金，让保障更厚实。60岁之前确诊才可触发，一生各给付一次。</div>
+      <div class="benefit-table">
+        <div class="bt-row">
+          <span class="bt-row-key">重大疾病（额外）</span>
+          <span class="bt-row-val grad-gold">+80% 保额</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">加上基础赔付</span>
+          <span class="bt-row-val" style="color:var(--gold-a)">合计 180% ✦</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">中度疾病（额外）</span>
+          <span class="bt-row-val">+50% → 合计 110%</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">轻度疾病（额外）</span>
+          <span class="bt-row-val">+10% → 合计 40%</span>
+        </div>
+      </div>
+      <div class="note-box">💡 50万保额 + 疾病关爱金，60岁前确诊癌症可赔 <strong style="color:var(--gold-a)">90万</strong>。</div>
+    </div>
+
+    <!-- 多次赔付 -->
+    <div class="opt-card opt-blue">
+      <div class="opt-header">
+        <div class="opt-name">重大疾病多次赔付</div>
+        <span class="opt-badge" style="background:rgba(79,172,254,0.15);color:var(--blue-a);border:1px solid rgba(79,172,254,0.3);">可选终身版</span>
+      </div>
+      <div class="opt-desc">患了第一次大病，担心未来还会来第二次？多次赔付责任就是为此而生。</div>
+      <div class="benefit-table">
+        <div class="bt-row">
+          <span class="bt-row-key">第二次重大疾病</span>
+          <span class="bt-row-val grad-blue">120% 保额</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">第三次重大疾病</span>
+          <span class="bt-row-val grad-blue">120% 保额</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">最短间隔期（癌症+其他重疾）</span>
+          <span class="bt-row-val">180 天</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">同种重疾复发间隔</span>
+          <span class="bt-row-val">730 天</span>
+        </div>
+      </div>
+      <div class="note-box">💡 三次重大疾病合计最高可赔 <strong style="color:var(--blue-a)">340% 保额</strong>（100%+120%+120%），相当于一份保额，三次用。</div>
+    </div>
+
+    <!-- 癌症治疗津贴 -->
+    <div class="opt-card opt-red">
+      <div class="opt-header">
+        <div class="opt-name">"恶性肿瘤"治疗津贴</div>
+        <span class="opt-badge" style="background:rgba(255,107,107,0.15);color:var(--red-a);border:1px solid rgba(255,107,107,0.3);">专为抗癌设计</span>
+      </div>
+      <div class="opt-desc">癌症治疗是场持久战，靶向药、免疫治疗、放化疗……每年都是大额支出。这项责任让你连续获得多年补偿。</div>
+      <div class="benefit-table">
+        <div class="bt-row">
+          <span class="bt-row-key">首次治疗津贴</span>
+          <span class="bt-row-val">癌症持续1年后，赔 40%</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">第二次治疗津贴</span>
+          <span class="bt-row-val">再满1年，赔 50%</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">第三次治疗津贴</span>
+          <span class="bt-row-val">再满1年，赔 30%</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">累计最高</span>
+          <span class="bt-row-val grad-red">120% 保额</span>
+        </div>
+      </div>
+      <div class="note-box">💡 50万保额，若持续抗癌3年，治疗津贴累计可拿 <strong style="color:var(--red-a)">60万</strong>，加上重症赔付共 <strong style="color:var(--red-a)">110万</strong>。</div>
+    </div>
+
+    <!-- 身故全残 -->
+    <div class="opt-card opt-purple">
+      <div class="opt-header">
+        <div class="opt-name">身故或全残保险金</div>
+        <span class="opt-badge" style="background:rgba(118,75,162,0.20);color:#a78bfa;border:1px solid rgba(118,75,162,0.4);">家庭支柱推荐</span>
+      </div>
+      <div class="opt-desc">让家人不因你的离去陷入经济困境，这是对至亲最后的守护。</div>
+      <div class="benefit-table">
+        <div class="bt-row">
+          <span class="bt-row-key">18岁以下身故/全残</span>
+          <span class="bt-row-val">退还已缴全部保费</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">18岁及以上身故/全残</span>
+          <span class="bt-row-val grad-purple">100% 基本保额</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 保费补偿 -->
+    <div class="opt-card opt-green">
+      <div class="opt-header">
+        <div class="opt-name">重大疾病保费补偿金</div>
+        <span class="opt-badge" style="background:rgba(67,233,123,0.15);color:var(--green-a);border:1px solid rgba(67,233,123,0.3);">买了不亏</span>
+      </div>
+      <div class="opt-desc">交费期满前确诊重大疾病，保险公司额外退还你已交的所有保费，相当于治病的钱再拿回一份。</div>
+      <div class="benefit-table">
+        <div class="bt-row">
+          <span class="bt-row-key">触发条件</span>
+          <span class="bt-row-val">交费期满前确诊重大疾病</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">退还金额</span>
+          <span class="bt-row-val grad-green">已缴全部保费总和</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 顶梁柱 -->
+    <div class="opt-card opt-gold">
+      <div class="opt-header">
+        <div class="opt-name">顶梁柱关爱保险金</div>
+        <span class="opt-badge" style="background:rgba(246,211,101,0.15);color:var(--gold-a);border:1px solid rgba(246,211,101,0.3);">有娃有老人必选</span>
+      </div>
+      <div class="opt-desc">你是家里的顶梁柱，上有老、下有小。一旦确诊癌症，额外再拿一笔钱，帮家人度过最难的时期。</div>
+      <div class="benefit-table">
+        <div class="bt-row">
+          <span class="bt-row-key">触发条件</span>
+          <span class="bt-row-val">确诊癌症 + 有未成年子女/60岁以上父母</span>
+        </div>
+        <div class="bt-row">
+          <span class="bt-row-key">额外赔付</span>
+          <span class="bt-row-val grad-gold">30% 保额</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SCENARIO CALCULATOR ====== -->
+  <section id="scenario" class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(246,211,101,0.15);">🧮</div>
+      <div><h2>赔付场景测算</h2><p>以50万保额为例，看能拿多少？</p></div>
+    </div>
+
+    <div class="calc-card glass">
+      <div class="calc-title grad-gold">50万保额 · 多场景赔付模拟</div>
+      <div class="calc-sub">以下均为理论最高赔付，具体以保险合同为准</div>
+
+      <div class="scenario">
+        <div class="scenario-head">
+          <span class="scenario-name">① 普通确诊癌症（仅基础保障）</span>
+          <span class="scenario-total grad-blue">50 万</span>
+        </div>
+        <div class="scenario-bar"><div class="scenario-fill" data-width="35" style="width:0;background:linear-gradient(90deg,var(--blue-a),var(--blue-b));"></div></div>
+        <div class="scenario-note">首次重大疾病 100% × 50万</div>
+      </div>
+
+      <div class="scenario-divider"></div>
+
+      <div class="scenario">
+        <div class="scenario-head">
+          <span class="scenario-name">② 60岁前确诊癌症（含疾病关爱金）</span>
+          <span class="scenario-total grad-gold">90 万</span>
+        </div>
+        <div class="scenario-bar"><div class="scenario-fill" data-width="63" style="width:0;background:linear-gradient(90deg,var(--gold-a),var(--gold-b));"></div></div>
+        <div class="scenario-note">重大疾病 100% + 关爱金 80% = 180% × 50万</div>
+      </div>
+
+      <div class="scenario-divider"></div>
+
+      <div class="scenario">
+        <div class="scenario-head">
+          <span class="scenario-name">③ 癌症后再患另一种重大疾病</span>
+          <span class="scenario-total grad-blue">110 万</span>
+        </div>
+        <div class="scenario-bar"><div class="scenario-fill" data-width="77" style="width:0;background:linear-gradient(90deg,var(--purple-a),var(--purple-b));"></div></div>
+        <div class="scenario-note">首次 100% + 第二次多次赔付 120% = 220% × 50万</div>
+      </div>
+
+      <div class="scenario-divider"></div>
+
+      <div class="scenario">
+        <div class="scenario-head">
+          <span class="scenario-name">④ 癌症持续3年 + 治疗津贴</span>
+          <span class="scenario-total grad-red">110 万</span>
+        </div>
+        <div class="scenario-bar"><div class="scenario-fill" data-width="77" style="width:0;background:linear-gradient(90deg,var(--red-a),var(--red-b));"></div></div>
+        <div class="scenario-note">重症 100% + 三次津贴（40%+50%+30%）× 50万</div>
+      </div>
+
+      <div class="scenario-divider"></div>
+
+      <div class="scenario">
+        <div class="scenario-head">
+          <span class="scenario-name">⑤ 最强组合（终身，三次重疾+津贴+关爱）</span>
+          <span class="scenario-total" style="color:var(--gold-a);font-size:22px;">340万+</span>
+        </div>
+        <div class="scenario-bar"><div class="scenario-fill" data-width="100" style="width:0;background:linear-gradient(90deg,var(--gold-a),var(--red-a));"></div></div>
+        <div class="scenario-note">三次重疾（340%）+ 关爱 + 津贴，多责任叠加</div>
+      </div>
+
+      <div class="calc-note">
+        💡 以上为 50万保额 的赔付示例。保额越高，赔付金额等比增加。<br>建议保额 ≥ 30万，有条件建议 50万起步。
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== IMPORTANT NOTICES ====== -->
+  <section id="notice" class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(255,107,107,0.12);">📌</div>
+      <div><h2>重要须知</h2><p>投保前必看，避免踩坑</p></div>
+    </div>
+
+    <div class="glass" style="padding:20px;border-radius:var(--radius-md);margin-bottom:10px;">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot" style="background:var(--blue-a);border-color:rgba(79,172,254,0.4);"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title">📅 犹豫期 · 15天</div>
+            <div class="tl-desc">购买后15天内，如果觉得不合适，可以<strong>无条件退保，无息全额退还保费</strong>。这15天是你好好读条款的机会，不要白白浪费。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot" style="background:var(--gold-a);border-color:rgba(246,211,101,0.4);"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title">⏳ 等待期 · 180天</div>
+            <div class="tl-desc">保险生效后180天内，<strong>因疾病原因患重大疾病不予赔付，仅退还已缴保费</strong>。意外伤害无等待期，今天生效明天出事也赔。所以趁现在健康赶紧买，别等有病再来。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot" style="background:var(--green-a);border-color:rgba(67,233,123,0.4);"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title">📝 如实告知义务</div>
+            <div class="tl-desc">购买时必须如实回答健康告知，<strong>故意隐瞒可导致理赔被拒且不退保费</strong>。但若保险公司已承保满2年，则不得以此解除合同（不可抗辩条款保护你）。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot" style="background:var(--purple-a);border-color:rgba(118,75,162,0.4);"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-title">⚡ 宽限期 · 60天</div>
+            <div class="tl-desc">分期缴费若未及时交费，有<strong>60天宽限期</strong>，期间发生保险事故仍然赔付（会扣减欠费）。超过宽限期则合同中止，需及时补缴复效。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 免责事项 -->
+    <div class="sec-label" style="margin-top:20px;">
+      <div class="sec-label-icon" style="background:rgba(255,107,107,0.12);">🚫</div>
+      <div><h2>不在保障范围内</h2><p>这些情况保险公司不赔</p></div>
+    </div>
+    <div class="exclusion-grid">
+      <div class="excl-item"><span class="excl-item-icon">🍷</span><div>酒驾、毒驾导致的疾病或伤残</div></div>
+      <div class="excl-item"><span class="excl-item-icon">⚔️</span><div>战争、军事冲突、核污染</div></div>
+      <div class="excl-item"><span class="excl-item-icon">🧬</span><div>遗传性疾病、先天性畸形</div></div>
+      <div class="excl-item"><span class="excl-item-icon">💊</span><div>主动吸毒、注射毒品</div></div>
+      <div class="excl-item"><span class="excl-item-icon">🔪</span><div>投保人故意伤害被保险人</div></div>
+      <div class="excl-item"><span class="excl-item-icon">😔</span><div>2年内故意自伤/自杀</div></div>
+    </div>
+    <div class="excl-note">
+      ✅ 注：艾滋病感染若是<strong>因器官移植、输血或职业原因</strong>导致的，属于保障范围。
+    </div>
+  </section>
+
+  <!-- ====== CLAIM PROCESS ====== -->
+  <section id="claim" class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(67,233,123,0.12);">📞</div>
+      <div><h2>理赔流程</h2><p>简单清晰，快速到账</p></div>
+    </div>
+    <div class="glass" style="padding:20px;border-radius:var(--radius-md);">
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>事故发生后10日内通知保险公司</h4>
+            <p>拨打客服热线 <strong>4006-11-7777</strong> 或登录官网 fosun-uhi.com 告知出险</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>准备理赔材料</h4>
+            <p>身份证 + 疾病诊断书（含病历、病理报告、检验报告） + 保单</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>提交理赔申请</h4>
+            <p>线上提交申请，保险公司在<strong>10个工作日内</strong>完成核定（复杂情况30日内）</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>理赔款打入账户</h4>
+            <p>核定属于保险责任后，<strong>达成协议10日内</strong>完成打款，资金直达</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== KEY INFO SUMMARY ====== -->
+  <section class="fade-up">
+    <div class="sec-label">
+      <div class="sec-label-icon" style="background:rgba(79,172,254,0.12);">📊</div>
+      <div><h2>产品核心参数</h2><p>收藏备用</p></div>
+    </div>
+    <div class="kv-table">
+      <div class="kv-row"><div class="kv-key">产品正式名称</div><div class="kv-val">复星联合优选K重大疾病保险（互联网）</div></div>
+      <div class="kv-row"><div class="kv-key">承保公司</div><div class="kv-val">复星联合健康保险股份有限公司</div></div>
+      <div class="kv-row"><div class="kv-key">保险期间</div><div class="kv-val">终身 / 保至70周岁（二选一）</div></div>
+      <div class="kv-row"><div class="kv-key">重大疾病</div><div class="kv-val">120种，赔100%（意外135%）</div></div>
+      <div class="kv-row"><div class="kv-key">中度疾病</div><div class="kv-val">30种，赔60%，最多3次</div></div>
+      <div class="kv-row"><div class="kv-key">轻度疾病</div><div class="kv-val">45种，赔30%，最多4次</div></div>
+      <div class="kv-row"><div class="kv-key">等待期</div><div class="kv-val">180天（意外无等待期）</div></div>
+      <div class="kv-row"><div class="kv-key">犹豫期</div><div class="kv-val">15天（无息退保）</div></div>
+      <div class="kv-row"><div class="kv-key">保费豁免</div><div class="kv-val">确诊轻/中/重症后豁免后续保费</div></div>
+      <div class="kv-row"><div class="kv-key">客服热线</div><div class="kv-val">4006-11-7777</div></div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-row">
+      <div class="trust-item">
+        <div class="trust-icon">🏛️</div>
+        <div class="trust-label">中国银保监会<br>批准产品</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-label">2年不可<br>抗辩条款</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <div class="trust-label">10工作日<br>快速理赔</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DISCLAIMER ====== -->
+  <div class="disclaimer fade-up">
+    <strong>免责声明：</strong>本页面内容根据保险条款整理，仅供参考，不构成投保建议。具体保障以保险合同条款为准，购买前请仔细阅读投保须知、健康告知及保险条款全文，如有疑问请致电客服 4006-11-7777 咨询。
+  </div>
+
+</div><!-- /wrap -->
+
+<!-- ====== STICKY BOTTOM BAR ====== -->
+<div class="bottom-bar">
+  <div class="bottom-bar-inner">
+    <div class="bottom-price">
+      <div class="bottom-price-label">保障期间</div>
+      <div>
+        <span class="bottom-price-val grad-gold">终身</span>
+        <span class="bottom-price-unit">覆盖</span>
+      </div>
+    </div>
+    <button class="btn-cta">立即投保咨询</button>
+  </div>
+</div>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+/* ---------- Accordion ---------- */
+function toggleGroup(header) {
+  const group = header.parentElement;
+  group.classList.toggle('open');
+}
+
+/* ---------- Intersection Observer (fade-up) ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+/* ---------- Counter Animation ---------- */
+function animateCount(el) {
+  const target = parseInt(el.dataset.count);
+  const dur = 1200;
+  const step = 16;
+  const inc = target / (dur / step);
+  let cur = 0;
+  const timer = setInterval(() => {
+    cur = Math.min(cur + inc, target);
+    el.textContent = Math.floor(cur);
+    if (cur >= target) clearInterval(timer);
+  }, step);
+}
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCount(e.target);
+      countObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+/* ---------- Progress / Scenario bars ---------- */
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const fills = e.target.querySelectorAll('[data-width]');
+      fills.forEach(f => {
+        setTimeout(() => { f.style.width = f.dataset.width + '%'; }, 200);
+      });
+      barObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.coverage-card, .calc-card').forEach(el => barObserver.observe(el));
+
+/* ---------- Nav pill active ---------- */
+const sections = document.querySelectorAll('section[id]');
+const pills = document.querySelectorAll('.nav-pill[href^="#"]');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      pills.forEach(p => p.classList.remove('active'));
+      const active = document.querySelector(`.nav-pill[href="#${e.target.id}"]`);
+      if (active) {
+        active.classList.add('active');
+        active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(s => navObserver.observe(s));
+
+/* ---------- CTA buttons ---------- */
+document.querySelectorAll('.btn-primary, .btn-cta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.textContent = '联系顾问中…';
+    btn.style.opacity = '0.75';
+    setTimeout(() => {
+      btn.textContent = btn.classList.contains('btn-cta') ? '立即投保咨询' : '立即了解详情 →';
+      btn.style.opacity = '';
+    }, 1800);
+  });
+});
+
+/* ---------- Smooth scroll for nav pills ---------- */
+document.querySelectorAll('.nav-pill').forEach(pill => {
+  pill.addEventListener('click', e => {
+    const href = pill.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

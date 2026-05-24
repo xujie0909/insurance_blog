@@ -55,3 +55,8 @@ paginate = 10
 [taxonomies]
   category = "categories"
   tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
