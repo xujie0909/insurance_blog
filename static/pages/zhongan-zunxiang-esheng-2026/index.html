@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>众安尊享e生2026版 · 百万医疗保险 · 全面保障解析</title>
+<style>
+/* =========================================
+   RESET & BASE
+========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep:     #060812;
+  --bg-card:     rgba(255,255,255,0.05);
+  --bg-card-h:   rgba(255,255,255,0.09);
+  --border:      rgba(255,255,255,0.10);
+  --border-h:    rgba(255,255,255,0.22);
+
+  --blue-a:   #4facfe;
+  --blue-b:   #00f2fe;
+  --purple-a: #667eea;
+  --purple-b: #764ba2;
+  --gold-a:   #f6d365;
+  --gold-b:   #fda085;
+  --red-a:    #ff6b6b;
+  --red-b:    #ee0979;
+  --green-a:  #43e97b;
+  --green-b:  #38f9d7;
+
+  --text-1: #ffffff;
+  --text-2: rgba(255,255,255,0.75);
+  --text-3: rgba(255,255,255,0.50);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+
+  --blur: blur(20px);
+  --font: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,-apple-system,sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-1);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   ANIMATED BACKGROUND ORBS
+========================================= */
+.bg-canvas {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+}
+.orb {
+  position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.45;
+  animation: orb-drift 18s ease-in-out infinite;
+}
+.orb-1 { width:520px;height:520px; background:radial-gradient(circle,#4facfe,transparent 70%);
+  top:-120px; left:-80px; animation-delay:0s; }
+.orb-2 { width:420px;height:420px; background:radial-gradient(circle,#764ba2,transparent 70%);
+  top:40%;right:-100px; animation-delay:-6s; }
+.orb-3 { width:360px;height:360px; background:radial-gradient(circle,#f6d365,transparent 70%);
+  bottom:-80px;left:30%; animation-delay:-12s; }
+.orb-4 { width:280px;height:280px; background:radial-gradient(circle,#43e97b,transparent 70%);
+  bottom:20%;left:-60px; animation-delay:-4s; opacity:0.30; }
+
+@keyframes orb-drift {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(40px,-30px) scale(1.08); }
+  66%      { transform: translate(-25px,45px) scale(0.95); }
+}
+
+/* =========================================
+   LAYOUT WRAPPER
+========================================= */
+.wrap { position:relative; z-index:1; max-width:480px; margin:0 auto; padding:0 16px 120px; }
+
+/* =========================================
+   GLASS CARD BASE
+========================================= */
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-radius: var(--radius-md);
+  transition: border-color .3s, background .3s, box-shadow .3s;
+}
+.glass:hover { border-color: var(--border-h); background: var(--bg-card-h); }
+
+/* =========================================
+   TOP NAV PILLS
+========================================= */
+.nav-pills {
+  position: sticky; top: 12px; z-index: 100;
+  display: flex; gap: 8px; padding: 10px 12px;
+  background: rgba(6,8,18,0.82); backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border); border-radius: 50px;
+  overflow-x: auto; scrollbar-width: none; margin-bottom: 32px;
+}
+.nav-pills::-webkit-scrollbar { display: none; }
+.nav-pill {
+  flex-shrink: 0; padding: 7px 16px; border-radius: 50px;
+  font-size: 13px; font-weight: 600; color: var(--text-3); white-space: nowrap;
+  transition: all .3s; cursor: pointer; border: none; background: transparent;
+}
+.nav-pill.active { color: #fff; background: rgba(79,172,254,0.25); box-shadow: 0 0 16px rgba(79,172,254,0.2); }
+
+/* =========================================
+   SECTION TITLES
+========================================= */
+.sec-title {
+  font-size: 22px; font-weight: 800; margin-bottom: 6px; letter-spacing: 0.5px;
+}
+.sec-sub {
+  font-size: 13px; color: var(--text-3); margin-bottom: 20px;
+}
+.section { margin-bottom: 36px; scroll-margin-top: 80px; }
+
+/* =========================================
+   HERO
+========================================= */
+.hero { text-align: center; padding: 24px 0 8px; }
+.hero-badge {
+  display: inline-block; padding: 6px 16px; border-radius: 50px;
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  background: linear-gradient(135deg,rgba(79,172,254,0.2),rgba(0,242,254,0.15));
+  border: 1px solid rgba(79,172,254,0.3); margin-bottom: 18px; color: var(--blue-a);
+}
+.hero h1 { font-size: 31px; font-weight: 900; line-height: 1.25; margin-bottom: 8px; letter-spacing: -0.5px; }
+.hero h1 .hl { background: linear-gradient(135deg,var(--blue-a),var(--blue-b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hero .sub { font-size: 14px; color: var(--text-3); margin-bottom: 28px; }
+
+.stat-row { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 8px; }
+.stat-item { text-align: center; }
+.stat-num { font-size: 38px; font-weight: 900; background: linear-gradient(135deg,var(--blue-a),var(--blue-b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.1; }
+.stat-label { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+/* =========================================
+   BENTO GRID
+========================================= */
+.bento { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bento .wide { grid-column: span 2; }
+.bento-card { padding: 20px 16px; text-align: center; position: relative; overflow: hidden; }
+.bento-card .icon { font-size: 28px; margin-bottom: 8px; }
+.bento-card .title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.bento-card .desc { font-size: 11px; color: var(--text-3); line-height: 1.5; }
+.bento-card .tag {
+  position: absolute; top: 10px; right: 10px; font-size: 10px; padding: 2px 8px;
+  border-radius: 50px; font-weight: 700;
+}
+.tag-must { background: rgba(79,172,254,0.25); color: var(--blue-a); }
+.tag-opt { background: rgba(246,211,101,0.25); color: var(--gold-a); }
+.bento-card:nth-child(1) { border-top: 2px solid var(--blue-a); }
+.bento-card:nth-child(2) { border-top: 2px solid var(--purple-a); }
+.bento-card:nth-child(3) { border-top: 2px solid var(--green-a); }
+.bento-card:nth-child(4) { border-top: 2px solid var(--gold-a); }
+.bento-card:nth-child(5) { border-top: 2px solid var(--red-a); }
+.bento-card:nth-child(6) { border-top: 2px solid var(--blue-b); }
+.bento-card:nth-child(7) { border-top: 2px solid var(--purple-b); }
+.bento-card:nth-child(8) { border-top: 2px solid var(--gold-a); }
+
+/* =========================================
+   DRUG COVERAGE TABLE
+========================================= */
+.drug-grid { display: flex; flex-direction: column; gap: 10px; }
+.drug-row {
+  display: flex; align-items: center; gap: 14px; padding: 16px;
+  border-radius: var(--radius-sm); background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.drug-row .d-icon { font-size: 30px; flex-shrink: 0; }
+.drug-row .d-info { flex: 1; }
+.drug-row .d-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.drug-row .d-desc { font-size: 11px; color: var(--text-3); }
+
+/* =========================================
+   THERAPY CARDS
+========================================= */
+.therapy-grid { display: flex; flex-direction: column; gap: 12px; }
+.therapy-card {
+  padding: 20px; text-align: center;
+  border-radius: var(--radius-md); border: 1px solid var(--border);
+  background: var(--bg-card); backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+.therapy-card .t-icon { font-size: 36px; margin-bottom: 10px; }
+.therapy-card .t-name { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+.therapy-card .t-en { font-size: 11px; color: var(--text-3); margin-bottom: 8px; }
+.therapy-card .t-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; }
+
+/* =========================================
+   ACCORDION (DISEASE LIST)
+========================================= */
+.acc-item { margin-bottom: 8px; border-radius: var(--radius-sm); overflow: hidden; }
+.acc-head {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 18px; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); cursor: pointer; color: var(--text-1);
+  font-size: 14px; font-weight: 700; text-align: left; font-family: var(--font);
+  transition: border-color .3s, background .3s;
+}
+.acc-head:hover { border-color: var(--border-h); }
+.acc-head .arr { transition: transform .35s; font-size: 12px; color: var(--text-3); }
+.acc-item.open .acc-head .arr { transform: rotate(180deg); }
+.acc-body { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+.acc-item.open .acc-body { max-height: 1800px; }
+.acc-inner { padding: 0 18px 18px; }
+.acc-inner .disease-tag {
+  display: inline-block; padding: 4px 10px; margin: 3px; font-size: 11px;
+  border-radius: 50px; background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  color: var(--text-2);
+}
+
+/* =========================================
+   CALCULATOR
+========================================= */
+.calc-scenario { margin-bottom: 16px; }
+.calc-scene-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.calc-bar-wrap { position: relative; height: 36px; background: rgba(255,255,255,0.06); border-radius: 18px; overflow: hidden; margin-bottom: 8px; }
+.calc-bar-fill { height: 100%; border-radius: 18px; transition: width 1.2s cubic-bezier(.22,.61,.36,1); width: 0; display: flex; align-items: center; padding-left: 14px; font-size: 12px; font-weight: 700; }
+.calc-bar-fill.visible { /* triggered by JS */ }
+.calc-detail { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-3); }
+
+/* =========================================
+   STEPS (CLAIMS PROCESS)
+========================================= */
+.steps { position: relative; padding-left: 36px; }
+.steps::before {
+  content: ''; position: absolute; left: 17px; top: 8px; bottom: 8px;
+  width: 2px; background: var(--border);
+}
+.step { position: relative; margin-bottom: 24px; }
+.step:last-child { margin-bottom: 0; }
+.step-circle {
+  position: absolute; left: -36px; top: 2px;
+  width: 36px; height: 36px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; font-weight: 900; font-size: 14px;
+  background: rgba(79,172,254,0.18); border: 2px solid var(--blue-a); color: var(--blue-a);
+}
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.step-desc { font-size: 12px; color: var(--text-3); }
+
+/* =========================================
+   WARN BOX
+========================================= */
+.warn-box {
+  padding: 18px; border-radius: var(--radius-md);
+  background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.25);
+}
+.warn-box .warn-title { font-size: 14px; font-weight: 700; color: var(--red-a); margin-bottom: 8px; }
+.warn-box ul { list-style: none; font-size: 12px; color: var(--text-2); }
+.warn-box ul li { padding: 4px 0; padding-left: 16px; position: relative; }
+.warn-box ul li::before { content: '×'; position: absolute; left: 0; color: var(--red-a); font-weight: 700; }
+
+/* =========================================
+   BOTTOM CTA
+========================================= */
+.cta-bar {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  max-width: 480px; width: 100%; padding: 14px 16px;
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
+  background: rgba(6,8,18,0.88); backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-top: 1px solid var(--border); z-index: 200;
+  display: flex; gap: 12px; align-items: center;
+}
+.cta-main {
+  flex: 1; padding: 14px 24px; border-radius: 50px; border: none;
+  font-size: 16px; font-weight: 800; cursor: pointer;
+  background: linear-gradient(135deg,var(--blue-a),var(--blue-b));
+  color: #fff; text-align: center; text-decoration: none;
+  box-shadow: 0 4px 24px rgba(79,172,254,0.35);
+  transition: transform .2s, box-shadow .2s;
+}
+.cta-main:active { transform: scale(0.97); }
+.cta-sec {
+  padding: 14px 18px; border-radius: 50px; border: 1px solid var(--border);
+  background: var(--bg-card); color: var(--text-2); font-size: 13px; cursor: pointer;
+  text-decoration: none; white-space: nowrap; font-weight: 600;
+}
+
+/* =========================================
+   FADE IN
+========================================= */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 26px; }
+  .stat-num { font-size: 30px; }
+  .bento { gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Animated background orbs -->
+<div class="bg-canvas">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
+<div class="wrap">
+
+<!-- ===== TOP NAV PILLS ===== -->
+<nav class="nav-pills" id="navPills">
+  <button class="nav-pill active" data-target="hero">总览</button>
+  <button class="nav-pill" data-target="sec-coverage">保障</button>
+  <button class="nav-pill" data-target="sec-drugs">特药</button>
+  <button class="nav-pill" data-target="sec-therapy">疗法</button>
+  <button class="nav-pill" data-target="sec-disease">病种</button>
+  <button class="nav-pill" data-target="sec-calc">测算</button>
+  <button class="nav-pill" data-target="sec-claim">理赔</button>
+  <button class="nav-pill" data-target="sec-warn">须知</button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero section" id="hero">
+  <div class="hero-badge">🏆 百万医疗险标杆 · 2026全新升级</div>
+  <h1>众安<span class="hl">尊享e生</span><br>2026版</h1>
+  <p class="sub">个人医疗保险（互联网2025版） · 众安在线财产保险</p>
+
+  <div class="stat-row">
+    <div class="stat-item">
+      <div class="stat-num"><span data-count="8">0</span>项</div>
+      <div class="stat-label">保障责任</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span data-count="100">0</span>种</div>
+      <div class="stat-label">重大疾病</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span data-count="4">0</span>类</div>
+      <div class="stat-label">特定药品</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span data-count="3">0</span>大</div>
+      <div class="stat-label">先进疗法</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COVERAGE BENTO ===== -->
+<section class="section fade-in" id="sec-coverage">
+  <h2 class="sec-title">🛡️ 八大保障责任</h2>
+  <p class="sec-sub">7项必选 + 1项可选，构建百万医疗保障矩阵</p>
+
+  <div class="bento">
+    <div class="bento-card glass wide">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">🏥</div>
+      <div class="title">一般医疗及外购药械</div>
+      <div class="desc">住院·特殊门诊·门诊手术·住院前后门急诊·院外购药和器械</div>
+    </div>
+    <div class="bento-card glass">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">💊</div>
+      <div class="title">重疾医疗及外购药械</div>
+      <div class="desc">100种重疾·含门急诊·外购药械</div>
+    </div>
+    <div class="bento-card glass">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">🩹</div>
+      <div class="title">特定疾病康复住院</div>
+      <div class="desc">16种疾病·180天内康复治疗</div>
+    </div>
+    <div class="bento-card glass wide">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">🧬</div>
+      <div class="title">特定药品费用</div>
+      <div class="desc">抗癌特药+基因检测·罕见病药·进口药·急需药 —— 指定药店直付</div>
+    </div>
+    <div class="bento-card glass">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">⚡</div>
+      <div class="title">恶性肿瘤先进疗法</div>
+      <div class="desc">质子重离子·硼中子俘获·光免疫</div>
+    </div>
+    <div class="bento-card glass">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">🚄</div>
+      <div class="title">重疾异地转诊</div>
+      <div class="desc">交通+住宿·跨省就医无忧</div>
+    </div>
+    <div class="bento-card glass">
+      <span class="tag tag-must">必选</span>
+      <div class="icon">👨‍⚕️</div>
+      <div class="title">重疾住院护工</div>
+      <div class="desc">日津贴给付·最高30天</div>
+    </div>
+    <div class="bento-card glass wide">
+      <span class="tag tag-opt">可选</span>
+      <div class="icon">🏪</div>
+      <div class="title">一般门急诊及外购药械</div>
+      <div class="desc">普通门急诊·外购药品和器械 —— 小孩/老人强烈建议附加</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPECIFIC DRUG COVERAGE ===== -->
+<section class="section fade-in" id="sec-drugs">
+  <h2 class="sec-title">💊 四种特定药品全覆盖</h2>
+  <p class="sec-sub">从国内已上市抗癌药到临床急需进口药，一条龙全包</p>
+
+  <div class="drug-grid">
+    <div class="drug-row">
+      <div class="d-icon">🎯</div>
+      <div class="d-info">
+        <div class="d-title">抗癌特药 + 基因检测</div>
+        <div class="d-desc">靶向药·免疫治疗药·用药基因检测<br>指定药店直付，无需垫钱</div>
+      </div>
+    </div>
+    <div class="drug-row">
+      <div class="d-icon">🦄</div>
+      <div class="d-info">
+        <div class="d-title">罕见病特定药品</div>
+        <div class="d-desc">国家罕见病目录内疾病用药<br>指定药店直付</div>
+      </div>
+    </div>
+    <div class="drug-row">
+      <div class="d-icon">🌍</div>
+      <div class="d-info">
+        <div class="d-title">临床急需进口药品 + 指定医院住院</div>
+        <div class="d-desc">国内未上市的救命进口药<br>海南博鳌等指定医疗机构</div>
+      </div>
+    </div>
+    <div class="drug-row">
+      <div class="d-icon">⚡</div>
+      <div class="d-info">
+        <div class="d-title">指定疾病急需药品</div>
+        <div class="d-desc">特定急需药品清单覆盖<br>指定药店直付</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADVANCED THERAPIES ===== -->
+<section class="section fade-in" id="sec-therapy">
+  <h2 class="sec-title">⚡ 三大先进癌症疗法</h2>
+  <p class="sec-sub">传统医保一分不报的尖端治疗，这里全包</p>
+
+  <div class="therapy-grid">
+    <div class="therapy-card" style="border-top:2px solid var(--blue-a);">
+      <div class="t-icon">🔵</div>
+      <div class="t-name">质子重离子治疗</div>
+      <div class="t-en">Proton / Heavy Ion Therapy</div>
+      <div class="t-desc">利用质子或重离子束精准轰击肿瘤，对周围正常组织损伤极小。一个疗程约30万元。</div>
+    </div>
+    <div class="therapy-card" style="border-top:2px solid var(--purple-a);">
+      <div class="t-icon">🟣</div>
+      <div class="t-name">硼中子俘获治疗（BNCT）</div>
+      <div class="t-en">Boron Neutron Capture Therapy</div>
+      <div class="t-desc">向癌细胞输送硼元素，再用中子束照射，"引爆"癌细胞。对浸润性、复发性肿瘤效果显著。</div>
+    </div>
+    <div class="therapy-card" style="border-top:2px solid var(--gold-a);">
+      <div class="t-icon">🟡</div>
+      <div class="t-name">光免疫疗法</div>
+      <div class="t-en">Photoimmunotherapy</div>
+      <div class="t-desc">用特异性抗体结合近红外光，精准杀死癌细胞。被称为继手术、放化疗、免疫之后的"第五种癌症疗法"。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DISEASE ACCORDION ===== -->
+<section class="section fade-in" id="sec-disease">
+  <h2 class="sec-title">📋 康复保障：16种特定疾病</h2>
+  <p class="sec-sub">以下疾病初次确诊后180天内的康复住院费用可赔付</p>
+
+  <div class="acc-item open">
+    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+      🧬 肿瘤类（2种）<span class="arr">▼</span>
+    </button>
+    <div class="acc-body"><div class="acc-inner">
+      <span class="disease-tag">恶性肿瘤——重度</span>
+      <span class="disease-tag">脑/脊髓肿瘤切除术后</span>
+    </div></div>
+  </div>
+
+  <div class="acc-item">
+    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+      🧠 神经系统类（7种）<span class="arr">▼</span>
+    </button>
+    <div class="acc-body"><div class="acc-inner">
+      <span class="disease-tag">脑卒中</span>
+      <span class="disease-tag">颅脑损伤</span>
+      <span class="disease-tag">脊髓损伤</span>
+      <span class="disease-tag">帕金森</span>
+      <span class="disease-tag">阿尔茨海默病及其他痴呆症</span>
+      <span class="disease-tag">缺血缺氧性脑病</span>
+      <span class="disease-tag">脑炎/脑膜炎后遗症</span>
+    </div></div>
+  </div>
+
+  <div class="acc-item">
+    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+      🫀 心肺系统类（5种）<span class="arr">▼</span>
+    </button>
+    <div class="acc-body"><div class="acc-inner">
+      <span class="disease-tag">冠心病</span>
+      <span class="disease-tag">心脏手术术后</span>
+      <span class="disease-tag">慢性呼吸衰竭</span>
+      <span class="disease-tag">重症肺炎</span>
+      <span class="disease-tag">慢性阻塞性肺疾病</span>
+    </div></div>
+  </div>
+
+  <div class="acc-item">
+    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
+      🦴 骨骼关节疾病/损伤类（2种）<span class="arr">▼</span>
+    </button>
+    <div class="acc-body"><div class="acc-inner">
+      <span class="disease-tag">严重骨折</span>
+      <span class="disease-tag">关节置换手术</span>
+    </div></div>
+  </div>
+
+  <p style="margin-top:14px; font-size:12px; color:var(--text-3);">
+    ⚠️ 此外，重大疾病医疗保险金覆盖 <strong style="color:var(--blue-a);">100种重大疾病</strong>（含恶性肿瘤——重度、急性心梗、脑中风后遗症、重大器官移植等），符合中国保险行业协会2020版重疾定义规范。
+  </p>
+</section>
+
+<!-- ===== CLAIMS CALCULATOR ===== -->
+<section class="section fade-in" id="sec-calc">
+  <h2 class="sec-title">📊 赔付场景测算</h2>
+  <p class="sec-sub">假设：总保额600万（一般医疗300万+重疾医疗300万），免赔额1万，社保身份投保，赔付比例100%</p>
+
+  <div class="calc-scenario">
+    <div class="calc-scene-title">🏥 场景一：普通肺炎住院</div>
+    <div class="calc-bar-wrap">
+      <div class="calc-bar-fill" data-width="0.15" style="background:linear-gradient(90deg,var(--green-a),var(--green-b));"></div>
+    </div>
+    <div class="calc-detail">
+      <span>总费用 35,000元</span>
+      <span>社保报 25,000元</span>
+      <span style="color:var(--green-a);">尊享e生 报 0元*</span>
+    </div>
+    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">*自付部分10,000元未超免赔额，免赔余额清零，下次就医不再扣免赔额</div>
+  </div>
+
+  <div class="calc-scenario">
+    <div class="calc-scene-title">🎯 场景二：肺癌靶向治疗（重疾）</div>
+    <div class="calc-bar-wrap">
+      <div class="calc-bar-fill" data-width="0.72" style="background:linear-gradient(90deg,var(--blue-a),var(--purple-a));"></div>
+    </div>
+    <div class="calc-detail">
+      <span>总费用 430,000元</span>
+      <span>社保报 50,000元</span>
+      <span style="color:var(--blue-a);">尊享e生 报 380,000元</span>
+    </div>
+    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">重疾0免赔：住院+外购靶向药+基因检测，社保后100%赔付</div>
+  </div>
+
+  <div class="calc-scenario">
+    <div class="calc-scene-title">⚡ 场景三：质子重离子治疗</div>
+    <div class="calc-bar-wrap">
+      <div class="calc-bar-fill" data-width="0.52" style="background:linear-gradient(90deg,var(--purple-a),var(--purple-b));"></div>
+    </div>
+    <div class="calc-detail">
+      <span>总费用 310,000元</span>
+      <span>社保报 0元</span>
+      <span style="color:var(--purple-a);">尊享e生 报 310,000元</span>
+    </div>
+    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">质子重离子属自费项目，社保不报。尊享e生全额赔付</div>
+  </div>
+
+  <div class="calc-scenario">
+    <div class="calc-scene-title">🩹 场景四：脑卒中康复 + 护工</div>
+    <div class="calc-bar-wrap">
+      <div class="calc-bar-fill" data-width="0.28" style="background:linear-gradient(90deg,var(--green-a),var(--blue-b));"></div>
+    </div>
+    <div class="calc-detail">
+      <span>总费用 165,000元</span>
+      <span>社保报 20,000元</span>
+      <span style="color:var(--green-a);">尊享e生 报 145,000元</span>
+    </div>
+    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">含康复住院90天+护工津贴30天（假设日津贴200元）</div>
+  </div>
+</section>
+
+<!-- ===== CLAIMS PROCESS ===== -->
+<section class="section fade-in" id="sec-claim">
+  <h2 class="sec-title">📬 理赔流程</h2>
+  <p class="sec-sub">四步走，保险公司30日内核定</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-circle">1</div>
+      <div class="step-title">出险报案</div>
+      <div class="step-desc">发生保险事故后，及时拨打众安客服电话或通过官方App/官微报案，说明事故原因、经过和损失情况。</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <div class="step-title">准备材料</div>
+      <div class="step-desc">保险金给付申请书、保险合同凭证、身份证件、医院病历/诊断书/处方/病理报告/费用发票和费用明细单、外购药证明（如涉及）等。</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">3</div>
+      <div class="step-title">提交审核</div>
+      <div class="step-desc">将材料提交给众安。情形复杂的，保险公司在30日内作出核定。特药需提前授权申请和处方审核，审核通过后到指定药店取药（保险公司直付）。</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">4</div>
+      <div class="step-title">理赔到账</div>
+      <div class="step-desc">属于保险责任的，达成赔付协议后10日内打款到银行卡。不属于保险责任的，3日内发出拒赔通知并说明理由。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WARNINGS ===== -->
+<section class="section fade-in" id="sec-warn">
+  <h2 class="sec-title">⚠️ 投保须知 & 不赔清单</h2>
+  <p class="sec-sub">买之前必须知道的几件事</p>
+
+  <div class="warn-box" style="margin-bottom:16px;">
+    <div class="warn-title">🔴 关键提示</div>
+    <ul>
+      <li><strong>不保证续保：</strong>保险期间1年，期满需重新申请，产品停售或健康状况变化可能无法续保</li>
+      <li><strong>等待期30天：</strong>等待期内确诊疾病不赔（意外伤害无等待期）</li>
+      <li><strong>犹豫期15天：</strong>犹豫期内退保全额退款，犹豫期后退保只能退未满期净保费</li>
+      <li><strong>免赔额：</strong>需自付超出免赔额的部分才开始赔付（重疾责任同样适用免赔额，除非另有约定）</li>
+      <li><strong>社保身份：</strong>以社保身份投保但就医时未用社保结算，赔付比例会降低</li>
+    </ul>
+  </div>
+
+  <div class="warn-box">
+    <div class="warn-title">🚫 主要免责情形</div>
+    <ul>
+      <li>既往症及保险单特别约定的除外疾病</li>
+      <li>故意犯罪、酒驾、吸毒、无证驾驶期间发生的事故</li>
+      <li>美容/整容/减肥/变性手术、牙科疾病（意外除外）</li>
+      <li>怀孕、流产、分娩、不孕不育相关费用</li>
+      <li>未经国家批准的试验性治疗、基因疗法、细胞免疫疗法</li>
+      <li>高风险运动（潜水、跳伞、攀岩、赛车等）</li>
+      <li>港澳台及境外就医</li>
+      <li>遗传性疾病、先天性畸形、精神和行为障碍</li>
+      <li>未在保险人指定药店购买的特药、未经处方审核的特药</li>
+    </ul>
+  </div>
+
+  <div class="glass" style="padding:18px;margin-top:16px;text-align:center;">
+    <div style="font-size:13px;color:var(--text-2);">
+      📋 投保年龄：<strong>30天~70周岁</strong> · 最高续保至 <strong>105周岁</strong><br>
+      🏢 承保公司：<strong>众安在线财产保险股份有限公司</strong>
+    </div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- ===== BOTTOM CTA ===== -->
+<div class="cta-bar">
+  <a href="#" class="cta-main">🔍 了解详情 / 获取报价</a>
+</div>
+
+<script>
+// ===== NUMBER COUNTER ANIMATION =====
+function animateCount(el) {
+  const target = parseInt(el.dataset.count);
+  if (isNaN(target)) return;
+  let cur = 0;
+  const inc = target / (1200 / 16);
+  const t = setInterval(() => {
+    cur = Math.min(cur + inc, target);
+    el.textContent = Math.floor(cur);
+    if (cur >= target) clearInterval(t);
+  }, 16);
+}
+
+// ===== FADE IN ON SCROLL =====
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Trigger progress bars inside
+      e.target.querySelectorAll('.calc-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width * 100 + '%';
+      });
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+// ===== NAV PILLS ACTIVE TRACKING =====
+const navPills = document.querySelectorAll('.nav-pill');
+const sectionIds = Array.from(navPills).map(p => p.dataset.target);
+
+const pillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navPills.forEach(p => p.classList.remove('active'));
+      const active = document.querySelector(`.nav-pill[data-target="${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' });
+
+sectionIds.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) pillObserver.observe(el);
+});
+
+// Smooth scroll for nav pills
+navPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    const target = document.getElementById(pill.dataset.target);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate hero numbers
+  document.querySelectorAll('[data-count]').forEach(animateCount);
+
+  // Trigger already-visible fade-in elements
+  document.querySelectorAll('.fade-in').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+      el.querySelectorAll('.calc-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width * 100 + '%';
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
