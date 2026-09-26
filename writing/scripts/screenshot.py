@@ -10,6 +10,7 @@
 路径不要带开头的斜杠：Git Bash 会把 /handbook/ 改写成 Windows 路径。
 
 输出目录：writing/screenshots/<页面路径>/
+整页截图为 <mobile|desktop>-<light|dark>.png，每张图示另存为 fig<N>-<视口>-<主题>.png。
 """
 
 import argparse
@@ -87,6 +88,9 @@ def main() -> int:
                     page.wait_for_timeout(500)
                     shot = out_dir / f"{vp_name}-{theme}.png"
                     page.screenshot(path=str(shot), full_page=True)
+                    # 每张图示单独截一张，方便看细节
+                    for i, fig in enumerate(page.query_selector_all("figure.fig"), 1):
+                        fig.screenshot(path=str(out_dir / f"fig{i}-{vp_name}-{theme}.png"))
                     page_report[f"{vp_name}-{theme}"] = {"screenshot": str(shot.relative_to(ROOT)), **page.evaluate(CHECK_JS)}
                     ctx.close()
             report[path] = page_report

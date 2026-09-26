@@ -42,6 +42,15 @@
     color: var(--secondary);
 }
 .post-content .fig-scroll { overflow-x: auto; }
+/* 竖版窄图：viewBox 宽度 360 左右的图，电脑上不要放大到整栏 */
+.post-content figure.fig-narrow svg { max-width: 420px; }
+
+/* 手机上表格收回屏幕宽度内，不横向滚动 */
+@media screen and (max-width: 600px) {
+    .post-content table { display: table; width: 100%; table-layout: fixed; }
+    .post-content table th,
+    .post-content table td { min-width: 0; white-space: normal; word-break: break-word; font-size: 15px; padding: 8px; }
+}
 .post-content .fig-scroll svg { min-width: 560px; }
 
 /* 一句话说清 */
@@ -88,19 +97,20 @@
 .hb-toc-chapter > ol li { margin: 4px 0; font-size: 13px; line-height: 1.5; }
 .hb-toc li.is-active > a { color: var(--fig-accent); font-weight: 600; }
 
+/* 和 PaperMod 的文章目录（details.toc）同一套外观 */
 .hb-toc-inline {
-    margin: 0 0 24px;
-    padding: 10px 14px;
+    margin-bottom: var(--content-gap);
+    background: var(--code-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--entry);
+    border-radius: var(--radius);
 }
-.hb-toc-inline summary { cursor: pointer; font-size: 14px; color: var(--secondary); }
-.hb-toc-inline .hb-toc { margin-top: 10px; }
+[data-theme="dark"] .hb-toc-inline { background: var(--entry); }
+.hb-toc-inline summary { cursor: pointer; padding: 0.3rem 1.2rem; font-weight: 500; }
+.hb-toc-inline .hb-toc { padding: 0 1.2rem 0.8rem 1.6rem; }
 .hb-toc-inline .hb-toc-chapter > ol { display: block; }
 
 .hb-sidebar { display: none; }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1360px) {
     .hb-sidebar {
         display: block;
         position: fixed;

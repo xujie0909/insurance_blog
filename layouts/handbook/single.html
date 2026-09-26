@@ -21,7 +21,7 @@
   </header>
 
   <details class="hb-toc-inline">
-    <summary>手册目录{{ if ge $idx 0 }}（第 {{ add $idx 1 }} / {{ len $order }} 篇）{{ end }}</summary>
+    <summary>手册全部章节{{ if ge $idx 0 }}（第 {{ add $idx 1 }} / {{ len $order }} 篇）{{ end }}</summary>
     {{ partial "handbook/toc.html" . }}
   </details>
 

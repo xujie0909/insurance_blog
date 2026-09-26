@@ -12,6 +12,8 @@ description: 保险知识手册的写作流水线：选题 → 要素材 → 查
 - [writing/写作规范.md](../../../writing/写作规范.md)：读者、立场、七段骨架、语言、信息来源
 - [writing/AI味规则.md](../../../writing/AI味规则.md)：作者维护的去 AI 味规则，优先级最高
 
+流水线里的 `fact-checker`、`reader-reviewer`、`visual-reviewer` 定义在 `.claude/agents/`。某个 agent 类型不可用时，改派 `general-purpose`，并在任务开头要求它先读 `.claude/agents/<名字>.md`、完全按其中的说明执行。
+
 ## 0. 判断输入
 
 | 输入 | 路径 |
