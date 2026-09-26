@@ -1,0 +1,60 @@
+
+  ---
+  发布新博文的流程
+
+  第一步：创建文章文件
+
+  在 content/posts/ 目录下新建一个 .md 文件，文件名建议用英文或拼音（会成为 URL 的一部分）：
+
+  content/posts/your-article-slug.md
+
+  第二步：填写 Front Matter（文章头信息）
+
+  参照现有文章的格式：
+
+  ---
+  title: "文章标题"
+  date: 2026-05-24
+  draft: false
+  categories: ["保险基础"]
+  tags: ["入门", "医疗险"]
+  description: "文章摘要，显示在列表页"
+  ---
+
+  正文内容从这里开始...
+
+  关键字段说明：
+  - draft: false — 必须是 false，否则不会发布
+  - date — 控制排序，新文章用当天日期
+  - categories / tags — 对应导航栏的"分类"和"标签"页
+
+  第三步：本地预览（可选）
+
+  cd D:\CLAUDE_PROJECT\BAOXIAN_BLOG
+  hugo server -D
+
+  浏览器打开 http://localhost:1313 预览效果。
+
+  —— 用手机通过局域网 IP 预览 ——
+
+  hugo server -D 默认绑定 127.0.0.1，且会把链接的 baseURL 固定成
+  http://localhost:1313/，所以手机通过 IP 访问时点链接会跳到 localhost 而打不开。
+
+  一键启动（推荐）：直接双击项目根目录下的 serve-lan.bat
+
+    脚本会自动检测本机局域网 IP，并以它为 baseURL 启动服务器，
+    启动后屏幕会打印手机访问地址（形如 http://192.168.x.x:1313/）。
+    在手机上用该地址访问即可（手机与本机需同一局域网）。
+
+  或者手动指定本机局域网 IP：
+
+    hugo server -D --bind 0.0.0.0 --baseURL http://本机局域网IP:1313/
+
+  第四步：构建并部署
+
+  目前项目没有自动部署流程，需要手动构建：
+
+  cd D:\CLAUDE_PROJECT\BAOXIAN_BLOG
+  hugo
+
+  生成的静态文件在 public/ 目录，将其上传到你的服务器（39.106.208.29）即可。

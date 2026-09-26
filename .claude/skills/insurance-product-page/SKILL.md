@@ -30,39 +30,45 @@ python .claude/skills/insurance-product-page/scripts/extract_pdf.py \
 
 文件路径：`content/posts/<slug>.md`
 
-写作要求：
+**⚠️ 先读完 [REFERENCE.md § blog-writing-style](REFERENCE.md#blog-writing-style) 再动笔。**
+
+核心原则：
+- **读者是谁**：保险小白，对医学/保险术语没有概念。所有专有名词必须用大白话解释。
+- **目的是什么**：让读者深切感受到这款产品能在什么生活场景下帮到他，不是做学术分析。
+- **优势重点突出，劣势一笔带过**。公司背景不需要展开。
 - Front Matter 参考：`howtopost.txt`
-- 语言口语化，减少术语，多用"你"、"我"
-- 开篇用痛点/场景勾住读者，制造紧迫感
-- 用 Mermaid 脑图/流程图可视化保障结构和赔付流程
-- 结尾有行动召唤（CTA）
-- 详细规范见 [REFERENCE.md](REFERENCE.md#blog-article)
+- 详细写作规范见 [REFERENCE.md](REFERENCE.md#blog-article)
+- **AI 写作避坑清单**见 [REFERENCE.md](REFERENCE.md#ai-anti-patterns)
 
 ### Step 3 — 生成 H5 详解页
 
 文件路径：`static/pages/<slug>/index.html`
 
+**以 `static/pages/zhongan-zunxiang-esheng-2026/index.html` 为模板，复制后替换内容。**
+
 设计要求（单 HTML 文件，无外部依赖）：
-- 移动端优先（max-width: 480px 居中）
-- 深色背景 + 玻璃拟态卡片 + 渐变光晕动画
-- 必含：保障脑图（Bento Grid）、病种手风琴列表、赔付场景测算、理赔流程步骤
-- 底部固定 CTA 栏、顶部导航丸子
-- 微动效：数字滚动计数、进度条动画、滚动淡入
+- **浅色系 + 卡片式布局**：白色背景（`#f7f8fa`），白色卡片，无玻璃拟态
+- **主色按产品类型**：医疗险绿色（`#1a6e5c`）/ 成人重疾蓝色（`#1a4a6e`）/ 少儿重疾紫色（`#7b4a9e`）
+- **Hero 头图**：渐变背景 + 产品名 + 公司名，用 SVG 纹理点缀
+- **必含模块**：TOC 目录 / 产品概览参数卡片 / 保障责任卡片（顶部色条区分必选可选）/ 理赔流程步骤条 / 关键参数表格 / 责任免除（红色面板） / 要点总结（优势+风险）
+- **响应式**：`max-width: 960px`，`@media max-width:768px` 适配手机
+- **无复杂动效**：不需要数字滚动、IntersectionObserver、进度条动画、渐变光晕
 - 详细设计规范见 [REFERENCE.md](REFERENCE.md#h5-design)
 
 ### Step 4 — 链接 H5 到博客文章
 
-在博客文章 Front Matter 之后、第一个 `##` 之前插入：
+在博客文章 Front Matter 之后、第一个 `##` 之前插入 H5 跳转卡片。**卡片配色与产品主色保持一致**：
 
+医疗险（绿色）示例：
 ```markdown
 {{< rawhtml >}}
-<a href="/pages/<slug>/" target="_blank" style="display:block;margin:0 0 28px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#0a1628);border:1px solid rgba(79,172,254,0.35);border-radius:14px;text-decoration:none;color:inherit;">
-  <div style="font-size:11px;color:#4facfe;font-weight:600;letter-spacing:.5px;margin-bottom:6px;">📊 互动版保障详解</div>
-  <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;"><产品名> · 完整责任解析 H5 页面</div>
-  <div style="font-size:13px;color:rgba(255,255,255,0.55);">点击查看精美互动版 →</div>
+<a href="/pages/<slug>/" target="_blank" style="display:block;margin:0 0 28px;padding:16px 20px;background:linear-gradient(135deg,#0d4f41,#1a6e5c);border:1px solid rgba(26,110,92,0.35);border-radius:14px;text-decoration:none;color:inherit;">
+  ...
 </a>
 {{< /rawhtml >}}
 ```
+
+成人重疾险用蓝色渐变（`#0d2e4f,#1a4a6e`），少儿重疾险用紫色渐变（`#4a1a6e,#7b4a9e`）。
 
 ### Step 5 — 检查基础配置
 

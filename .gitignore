@@ -1,0 +1,11 @@
+# Hugo build output (CI builds on its own)
+public/
+resources/_gen/
+.hugo_build.lock
+
+# 写作原材料（条款 PDF 等），不发布
+product/
+
+# 视觉审阅截图
+writing/screenshots/
+node_modules/

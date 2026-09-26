@@ -2,741 +2,446 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>众安尊享e生2026版 · 百万医疗保险 · 全面保障解析</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>众安尊享e生·百万医疗保险（2026版）— 产品核心责任分析</title>
 <style>
-/* =========================================
-   RESET & BASE
-========================================= */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a6e5c;
+    --primary-light: #e8f5f1;
+    --accent: #e8873a;
+    --accent-light: #fff5ed;
+    --danger: #c0392b;
+    --danger-light: #fdecea;
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --text-secondary: #5a6c7d;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.04);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
 
-:root {
-  --bg-deep:     #060812;
-  --bg-card:     rgba(255,255,255,0.05);
-  --bg-card-h:   rgba(255,255,255,0.09);
-  --border:      rgba(255,255,255,0.10);
-  --border-h:    rgba(255,255,255,0.22);
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  --blue-a:   #4facfe;
-  --blue-b:   #00f2fe;
-  --purple-a: #667eea;
-  --purple-b: #764ba2;
-  --gold-a:   #f6d365;
-  --gold-b:   #fda085;
-  --red-a:    #ff6b6b;
-  --red-b:    #ee0979;
-  --green-a:  #43e97b;
-  --green-b:  #38f9d7;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  --text-1: #ffffff;
-  --text-2: rgba(255,255,255,0.75);
-  --text-3: rgba(255,255,255,0.50);
+  .hero {
+    background: linear-gradient(135deg, #0d4f41 0%, #1a6e5c 40%, #1e8b73 100%);
+    color: #fff; padding: 48px 24px 40px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(255,255,255,.15);
+    backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.2);
+    padding: 4px 16px; border-radius: 20px; font-size: 13px;
+    font-weight: 500; letter-spacing: .04em; margin-bottom: 16px;
+  }
+  .hero h1 { font-size: clamp(26px, 5vw, 38px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; position: relative; }
+  .hero .subtitle { font-size: 15px; opacity: .85; font-weight: 400; position: relative; }
+  .hero .meta { margin-top: 16px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 12px; opacity: .7; position: relative; }
 
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 28px;
-  --radius-xl: 40px;
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  section { margin: 36px 0; }
 
-  --blur: blur(20px);
-  --font: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,-apple-system,sans-serif;
-}
+  .section-title { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; margin-bottom: 20px; letter-spacing: -.01em; }
+  .section-title .icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .icon-coverage { background: var(--primary-light); color: var(--primary); }
+  .icon-warning { background: var(--danger-light); color: var(--danger); }
+  .icon-params { background: var(--accent-light); color: var(--accent); }
+  .icon-info { background: #edf0ff; color: #4a5ecf; }
 
-html { scroll-behavior: smooth; }
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); overflow: hidden; }
+  .divider { width: 50px; height: 3px; background: var(--primary); border-radius: 2px; opacity: .3; margin: 6px 0 18px; }
 
-body {
-  background: var(--bg-deep);
-  color: var(--text-1);
-  font-family: var(--font);
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+  .coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .coverage-card {
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--border);
+    padding: 24px 20px; position: relative; overflow: hidden;
+  }
+  .coverage-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; }
+  .coverage-card.mandatory::after { background: var(--primary); }
+  .coverage-card.optional::after { background: var(--accent); }
+  .card-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 12px; letter-spacing: .03em; margin-bottom: 10px; }
+  .tag-mandatory { background: var(--primary-light); color: var(--primary); }
+  .tag-optional { background: var(--accent-light); color: var(--accent); }
+  .card-num { font-size: 40px; font-weight: 900; color: var(--primary); opacity: .12; position: absolute; top: 12px; right: 18px; line-height: 1; }
+  .coverage-card.optional .card-num { color: var(--accent); }
+  .card-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; padding-right: 36px; }
+  .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .card-details { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .card-details ul { list-style: none; padding: 0; }
+  .card-details li { font-size: 12px; color: var(--text-secondary); padding: 2px 0 2px 16px; position: relative; }
+  .card-details li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); opacity: .4; position: absolute; left: 2px; top: 8px; }
+  .coverage-card.optional .card-details li::before { background: var(--accent); }
 
-/* =========================================
-   ANIMATED BACKGROUND ORBS
-========================================= */
-.bg-canvas {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-}
-.orb {
-  position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.45;
-  animation: orb-drift 18s ease-in-out infinite;
-}
-.orb-1 { width:520px;height:520px; background:radial-gradient(circle,#4facfe,transparent 70%);
-  top:-120px; left:-80px; animation-delay:0s; }
-.orb-2 { width:420px;height:420px; background:radial-gradient(circle,#764ba2,transparent 70%);
-  top:40%;right:-100px; animation-delay:-6s; }
-.orb-3 { width:360px;height:360px; background:radial-gradient(circle,#f6d365,transparent 70%);
-  bottom:-80px;left:30%; animation-delay:-12s; }
-.orb-4 { width:280px;height:280px; background:radial-gradient(circle,#43e97b,transparent 70%);
-  bottom:20%;left:-60px; animation-delay:-4s; opacity:0.30; }
+  .exclusion-section { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 12px; overflow: hidden; }
+  .exclusion-header { padding: 14px 20px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; background: var(--danger-light); color: var(--danger); border-bottom: 1px solid #f5c6cb; }
+  .exclusion-header .num { width: 24px; height: 24px; border-radius: 50%; background: var(--danger); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .exclusion-body { padding: 16px 20px; }
+  .exclusion-body ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px; }
+  .exclusion-body li { font-size: 12px; color: var(--text-secondary); padding: 5px 8px 5px 20px; position: relative; background: #fafbfc; border-radius: 6px; }
+  .exclusion-body li::before { content: '✕'; position: absolute; left: 5px; top: 5px; font-size: 9px; color: var(--danger); opacity: .5; font-weight: 700; }
 
-@keyframes orb-drift {
-  0%,100% { transform: translate(0,0) scale(1); }
-  33%      { transform: translate(40px,-30px) scale(1.08); }
-  66%      { transform: translate(-25px,45px) scale(0.95); }
-}
+  .params-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .param-card { background: var(--card); border-radius: var(--radius-sm); box-shadow: var(--shadow); border: 1px solid var(--border); padding: 18px; text-align: center; }
+  .param-value { font-size: 20px; font-weight: 800; color: var(--primary); }
+  .param-label { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
 
-/* =========================================
-   LAYOUT WRAPPER
-========================================= */
-.wrap { position:relative; z-index:1; max-width:480px; margin:0 auto; padding:0 16px 120px; }
+  .flow-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; padding: 28px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .flow-step { background: var(--primary-light); border-radius: var(--radius-sm); padding: 14px 16px; text-align: center; min-width: 120px; flex: 1; max-width: 180px; }
+  .flow-step .step-num { font-size: 10px; font-weight: 700; color: var(--primary); letter-spacing: .04em; }
+  .flow-step .step-text { font-size: 13px; font-weight: 600; margin-top: 3px; }
+  .flow-arrow { font-size: 22px; color: #cbd5e0; font-weight: 300; }
 
-/* =========================================
-   GLASS CARD BASE
-========================================= */
-.glass {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-  border-radius: var(--radius-md);
-  transition: border-color .3s, background .3s, box-shadow .3s;
-}
-.glass:hover { border-color: var(--border-h); background: var(--bg-card-h); }
+  .notice { border-left: 4px solid var(--accent); background: var(--accent-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: #8a5a2c; }
+  .warning-box { border-left: 4px solid var(--danger); background: var(--danger-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: #8b3a3a; }
 
-/* =========================================
-   TOP NAV PILLS
-========================================= */
-.nav-pills {
-  position: sticky; top: 12px; z-index: 100;
-  display: flex; gap: 8px; padding: 10px 12px;
-  background: rgba(6,8,18,0.82); backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--border); border-radius: 50px;
-  overflow-x: auto; scrollbar-width: none; margin-bottom: 32px;
-}
-.nav-pills::-webkit-scrollbar { display: none; }
-.nav-pill {
-  flex-shrink: 0; padding: 7px 16px; border-radius: 50px;
-  font-size: 13px; font-weight: 600; color: var(--text-3); white-space: nowrap;
-  transition: all .3s; cursor: pointer; border: none; background: transparent;
-}
-.nav-pill.active { color: #fff; background: rgba(79,172,254,0.25); box-shadow: 0 0 16px rgba(79,172,254,0.2); }
+  .toc { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); padding: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .toc a { display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px; background: #f7f8fa; border-radius: 20px; text-decoration: none; font-size: 12px; font-weight: 500; color: var(--text); }
+  .toc a:hover { background: var(--primary); color: #fff; }
 
-/* =========================================
-   SECTION TITLES
-========================================= */
-.sec-title {
-  font-size: 22px; font-weight: 800; margin-bottom: 6px; letter-spacing: 0.5px;
-}
-.sec-sub {
-  font-size: 13px; color: var(--text-3); margin-bottom: 20px;
-}
-.section { margin-bottom: 36px; scroll-margin-top: 80px; }
+  .highlight-num { font-size: 32px; font-weight: 900; color: var(--primary); line-height: 1; }
 
-/* =========================================
-   HERO
-========================================= */
-.hero { text-align: center; padding: 24px 0 8px; }
-.hero-badge {
-  display: inline-block; padding: 6px 16px; border-radius: 50px;
-  font-size: 12px; font-weight: 700; letter-spacing: 1px;
-  background: linear-gradient(135deg,rgba(79,172,254,0.2),rgba(0,242,254,0.15));
-  border: 1px solid rgba(79,172,254,0.3); margin-bottom: 18px; color: var(--blue-a);
-}
-.hero h1 { font-size: 31px; font-weight: 900; line-height: 1.25; margin-bottom: 8px; letter-spacing: -0.5px; }
-.hero h1 .hl { background: linear-gradient(135deg,var(--blue-a),var(--blue-b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.hero .sub { font-size: 14px; color: var(--text-3); margin-bottom: 28px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th { background: var(--primary-light); padding: 10px 14px; text-align: left; font-weight: 700; }
+  tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+  tbody td:first-child { font-weight: 600; color: var(--text); }
 
-.stat-row { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 8px; }
-.stat-item { text-align: center; }
-.stat-num { font-size: 38px; font-weight: 900; background: linear-gradient(135deg,var(--blue-a),var(--blue-b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.1; }
-.stat-label { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  footer { text-align: center; padding: 28px 20px; color: var(--text-secondary); font-size: 11px; border-top: 1px solid var(--border); margin-top: 40px; }
 
-/* =========================================
-   BENTO GRID
-========================================= */
-.bento { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.bento .wide { grid-column: span 2; }
-.bento-card { padding: 20px 16px; text-align: center; position: relative; overflow: hidden; }
-.bento-card .icon { font-size: 28px; margin-bottom: 8px; }
-.bento-card .title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-.bento-card .desc { font-size: 11px; color: var(--text-3); line-height: 1.5; }
-.bento-card .tag {
-  position: absolute; top: 10px; right: 10px; font-size: 10px; padding: 2px 8px;
-  border-radius: 50px; font-weight: 700;
-}
-.tag-must { background: rgba(79,172,254,0.25); color: var(--blue-a); }
-.tag-opt { background: rgba(246,211,101,0.25); color: var(--gold-a); }
-.bento-card:nth-child(1) { border-top: 2px solid var(--blue-a); }
-.bento-card:nth-child(2) { border-top: 2px solid var(--purple-a); }
-.bento-card:nth-child(3) { border-top: 2px solid var(--green-a); }
-.bento-card:nth-child(4) { border-top: 2px solid var(--gold-a); }
-.bento-card:nth-child(5) { border-top: 2px solid var(--red-a); }
-.bento-card:nth-child(6) { border-top: 2px solid var(--blue-b); }
-.bento-card:nth-child(7) { border-top: 2px solid var(--purple-b); }
-.bento-card:nth-child(8) { border-top: 2px solid var(--gold-a); }
-
-/* =========================================
-   DRUG COVERAGE TABLE
-========================================= */
-.drug-grid { display: flex; flex-direction: column; gap: 10px; }
-.drug-row {
-  display: flex; align-items: center; gap: 14px; padding: 16px;
-  border-radius: var(--radius-sm); background: var(--bg-card);
-  border: 1px solid var(--border);
-}
-.drug-row .d-icon { font-size: 30px; flex-shrink: 0; }
-.drug-row .d-info { flex: 1; }
-.drug-row .d-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
-.drug-row .d-desc { font-size: 11px; color: var(--text-3); }
-
-/* =========================================
-   THERAPY CARDS
-========================================= */
-.therapy-grid { display: flex; flex-direction: column; gap: 12px; }
-.therapy-card {
-  padding: 20px; text-align: center;
-  border-radius: var(--radius-md); border: 1px solid var(--border);
-  background: var(--bg-card); backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-}
-.therapy-card .t-icon { font-size: 36px; margin-bottom: 10px; }
-.therapy-card .t-name { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
-.therapy-card .t-en { font-size: 11px; color: var(--text-3); margin-bottom: 8px; }
-.therapy-card .t-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; }
-
-/* =========================================
-   ACCORDION (DISEASE LIST)
-========================================= */
-.acc-item { margin-bottom: 8px; border-radius: var(--radius-sm); overflow: hidden; }
-.acc-head {
-  width: 100%; display: flex; justify-content: space-between; align-items: center;
-  padding: 16px 18px; background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); cursor: pointer; color: var(--text-1);
-  font-size: 14px; font-weight: 700; text-align: left; font-family: var(--font);
-  transition: border-color .3s, background .3s;
-}
-.acc-head:hover { border-color: var(--border-h); }
-.acc-head .arr { transition: transform .35s; font-size: 12px; color: var(--text-3); }
-.acc-item.open .acc-head .arr { transform: rotate(180deg); }
-.acc-body { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
-.acc-item.open .acc-body { max-height: 1800px; }
-.acc-inner { padding: 0 18px 18px; }
-.acc-inner .disease-tag {
-  display: inline-block; padding: 4px 10px; margin: 3px; font-size: 11px;
-  border-radius: 50px; background: rgba(255,255,255,0.06); border: 1px solid var(--border);
-  color: var(--text-2);
-}
-
-/* =========================================
-   CALCULATOR
-========================================= */
-.calc-scenario { margin-bottom: 16px; }
-.calc-scene-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-.calc-bar-wrap { position: relative; height: 36px; background: rgba(255,255,255,0.06); border-radius: 18px; overflow: hidden; margin-bottom: 8px; }
-.calc-bar-fill { height: 100%; border-radius: 18px; transition: width 1.2s cubic-bezier(.22,.61,.36,1); width: 0; display: flex; align-items: center; padding-left: 14px; font-size: 12px; font-weight: 700; }
-.calc-bar-fill.visible { /* triggered by JS */ }
-.calc-detail { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-3); }
-
-/* =========================================
-   STEPS (CLAIMS PROCESS)
-========================================= */
-.steps { position: relative; padding-left: 36px; }
-.steps::before {
-  content: ''; position: absolute; left: 17px; top: 8px; bottom: 8px;
-  width: 2px; background: var(--border);
-}
-.step { position: relative; margin-bottom: 24px; }
-.step:last-child { margin-bottom: 0; }
-.step-circle {
-  position: absolute; left: -36px; top: 2px;
-  width: 36px; height: 36px; border-radius: 50%; display: flex;
-  align-items: center; justify-content: center; font-weight: 900; font-size: 14px;
-  background: rgba(79,172,254,0.18); border: 2px solid var(--blue-a); color: var(--blue-a);
-}
-.step-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
-.step-desc { font-size: 12px; color: var(--text-3); }
-
-/* =========================================
-   WARN BOX
-========================================= */
-.warn-box {
-  padding: 18px; border-radius: var(--radius-md);
-  background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.25);
-}
-.warn-box .warn-title { font-size: 14px; font-weight: 700; color: var(--red-a); margin-bottom: 8px; }
-.warn-box ul { list-style: none; font-size: 12px; color: var(--text-2); }
-.warn-box ul li { padding: 4px 0; padding-left: 16px; position: relative; }
-.warn-box ul li::before { content: '×'; position: absolute; left: 0; color: var(--red-a); font-weight: 700; }
-
-/* =========================================
-   BOTTOM CTA
-========================================= */
-.cta-bar {
-  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-  max-width: 480px; width: 100%; padding: 14px 16px;
-  padding-bottom: max(14px, env(safe-area-inset-bottom));
-  background: rgba(6,8,18,0.88); backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border-top: 1px solid var(--border); z-index: 200;
-  display: flex; gap: 12px; align-items: center;
-}
-.cta-main {
-  flex: 1; padding: 14px 24px; border-radius: 50px; border: none;
-  font-size: 16px; font-weight: 800; cursor: pointer;
-  background: linear-gradient(135deg,var(--blue-a),var(--blue-b));
-  color: #fff; text-align: center; text-decoration: none;
-  box-shadow: 0 4px 24px rgba(79,172,254,0.35);
-  transition: transform .2s, box-shadow .2s;
-}
-.cta-main:active { transform: scale(0.97); }
-.cta-sec {
-  padding: 14px 18px; border-radius: 50px; border: 1px solid var(--border);
-  background: var(--bg-card); color: var(--text-2); font-size: 13px; cursor: pointer;
-  text-decoration: none; white-space: nowrap; font-weight: 600;
-}
-
-/* =========================================
-   FADE IN
-========================================= */
-.fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 380px) {
-  .hero h1 { font-size: 26px; }
-  .stat-num { font-size: 30px; }
-  .bento { gap: 8px; }
-}
+  @media (max-width: 768px) {
+    .hero { padding: 36px 16px 28px; }
+    .section-title { font-size: 19px; }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .flow-row { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .exclusion-body ul { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Animated background orbs -->
-<div class="bg-canvas">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
-</div>
-
-<div class="wrap">
-
-<!-- ===== TOP NAV PILLS ===== -->
-<nav class="nav-pills" id="navPills">
-  <button class="nav-pill active" data-target="hero">总览</button>
-  <button class="nav-pill" data-target="sec-coverage">保障</button>
-  <button class="nav-pill" data-target="sec-drugs">特药</button>
-  <button class="nav-pill" data-target="sec-therapy">疗法</button>
-  <button class="nav-pill" data-target="sec-disease">病种</button>
-  <button class="nav-pill" data-target="sec-calc">测算</button>
-  <button class="nav-pill" data-target="sec-claim">理赔</button>
-  <button class="nav-pill" data-target="sec-warn">须知</button>
-</nav>
-
-<!-- ===== HERO ===== -->
-<section class="hero section" id="hero">
-  <div class="hero-badge">🏆 百万医疗险标杆 · 2026全新升级</div>
-  <h1>众安<span class="hl">尊享e生</span><br>2026版</h1>
-  <p class="sub">个人医疗保险（互联网2025版） · 众安在线财产保险</p>
-
-  <div class="stat-row">
-    <div class="stat-item">
-      <div class="stat-num"><span data-count="8">0</span>项</div>
-      <div class="stat-label">保障责任</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><span data-count="100">0</span>种</div>
-      <div class="stat-label">重大疾病</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><span data-count="4">0</span>类</div>
-      <div class="stat-label">特定药品</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><span data-count="3">0</span>大</div>
-      <div class="stat-label">先进疗法</div>
-    </div>
+<header class="hero">
+  <div class="hero-badge">📋 产品条款深度解析</div>
+  <h1>众安尊享e生·百万医疗保险</h1>
+  <p class="subtitle">个人医疗保险条款（互联网 2025版）— 2026版核心责任分析</p>
+  <div class="meta">
+    <span>🏢 众安在线财产保险股份有限公司</span>
+    <span>📅 分析日期：2026-08-02</span>
   </div>
-</section>
+</header>
 
-<!-- ===== COVERAGE BENTO ===== -->
-<section class="section fade-in" id="sec-coverage">
-  <h2 class="sec-title">🛡️ 八大保障责任</h2>
-  <p class="sec-sub">7项必选 + 1项可选，构建百万医疗保障矩阵</p>
+<main class="container">
 
-  <div class="bento">
-    <div class="bento-card glass wide">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">🏥</div>
-      <div class="title">一般医疗及外购药械</div>
-      <div class="desc">住院·特殊门诊·门诊手术·住院前后门急诊·院外购药和器械</div>
+  <section>
+    <div class="toc">
+      <a href="#overview">📊 产品概览</a>
+      <a href="#coverage">🛡️ 八大保障责任</a>
+      <a href="#params">⚙️ 关键参数</a>
+      <a href="#exclusions">🚫 责任免除</a>
+      <a href="#summary">💡 要点总结</a>
     </div>
-    <div class="bento-card glass">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">💊</div>
-      <div class="title">重疾医疗及外购药械</div>
-      <div class="desc">100种重疾·含门急诊·外购药械</div>
-    </div>
-    <div class="bento-card glass">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">🩹</div>
-      <div class="title">特定疾病康复住院</div>
-      <div class="desc">16种疾病·180天内康复治疗</div>
-    </div>
-    <div class="bento-card glass wide">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">🧬</div>
-      <div class="title">特定药品费用</div>
-      <div class="desc">抗癌特药+基因检测·罕见病药·进口药·急需药 —— 指定药店直付</div>
-    </div>
-    <div class="bento-card glass">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">⚡</div>
-      <div class="title">恶性肿瘤先进疗法</div>
-      <div class="desc">质子重离子·硼中子俘获·光免疫</div>
-    </div>
-    <div class="bento-card glass">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">🚄</div>
-      <div class="title">重疾异地转诊</div>
-      <div class="desc">交通+住宿·跨省就医无忧</div>
-    </div>
-    <div class="bento-card glass">
-      <span class="tag tag-must">必选</span>
-      <div class="icon">👨‍⚕️</div>
-      <div class="title">重疾住院护工</div>
-      <div class="desc">日津贴给付·最高30天</div>
-    </div>
-    <div class="bento-card glass wide">
-      <span class="tag tag-opt">可选</span>
-      <div class="icon">🏪</div>
-      <div class="title">一般门急诊及外购药械</div>
-      <div class="desc">普通门急诊·外购药品和器械 —— 小孩/老人强烈建议附加</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== SPECIFIC DRUG COVERAGE ===== -->
-<section class="section fade-in" id="sec-drugs">
-  <h2 class="sec-title">💊 四种特定药品全覆盖</h2>
-  <p class="sec-sub">从国内已上市抗癌药到临床急需进口药，一条龙全包</p>
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <h2 class="section-title"><span class="icon icon-info">📊</span> 产品概览</h2>
+    <div class="divider"></div>
 
-  <div class="drug-grid">
-    <div class="drug-row">
-      <div class="d-icon">🎯</div>
-      <div class="d-info">
-        <div class="d-title">抗癌特药 + 基因检测</div>
-        <div class="d-desc">靶向药·免疫治疗药·用药基因检测<br>指定药店直付，无需垫钱</div>
+    <div class="params-grid">
+      <div class="param-card"><div class="param-value">30天–70周岁</div><div class="param-label">初次投保年龄（可续保至105周岁）</div></div>
+      <div class="param-card"><div class="param-value">1年</div><div class="param-label">保险期间（不保证续保）</div></div>
+      <div class="param-card"><div class="param-value">15天</div><div class="param-label">犹豫期（冷静期）</div></div>
+      <div class="param-card"><div class="param-value">约定免赔额</div><div class="param-label">投保时协商确定（如¥10,000）</div></div>
+      <div class="param-card"><div class="param-value">百万级</div><div class="param-label">总保险金额上限</div></div>
+      <div class="param-card"><div class="param-value">非保证续保</div><div class="param-label">期满需重新申请，产品停售不再接受</div></div>
+    </div>
+
+    <div class="notice" style="margin-top:20px;">
+      <strong>⚠️ 重要提示：</strong>本产品为<strong>不保证续保</strong>的一年期短期健康险。保险期间届满后需重新申请并经保险人同意方可续保。若产品统一停售，保险人将不再接受投保申请。
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section id="coverage">
+    <h2 class="section-title"><span class="icon icon-coverage">🛡️</span> 八大保障责任详解</h2>
+    <div class="divider"></div>
+
+    <p style="color:var(--text-secondary);margin-bottom:20px;font-size:13px;">
+      本合同包含 <strong style="color:var(--primary);">7项必选责任</strong> + <strong style="color:var(--accent);">1项可选责任</strong>。所有责任的累计给付总额以<strong>总保险金额</strong>为限。
+    </p>
+
+    <div class="coverage-grid">
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">01</div>
+        <h3 class="card-title">一般医疗及外购药械费用医疗保险金</h3>
+        <p class="card-desc">因意外或等待期后疾病住院/治疗，赔付必需且合理的医疗费用。</p>
+        <div class="card-details"><ul>
+          <li><strong>住院医疗费用</strong>：床位费、膳食费、护理费、ICU费、诊疗费、检查检验费、药品费、手术费、救护车使用费、手术机器人使用费</li>
+          <li><strong>特殊门诊医疗费用</strong>：门诊肾透析、恶性肿瘤门诊治疗（化疗/放疗/免疫/内分泌/靶向）、器官移植后抗排异</li>
+          <li><strong>门诊手术医疗费用</strong></li>
+          <li><strong>住院前后门急诊费用</strong>：住院前30天至出院后30天</li>
+          <li><strong>外购药品及外购医疗器械费用</strong>：院外药店凭处方购买，含高值耗材</li>
+        </ul></div>
       </div>
-    </div>
-    <div class="drug-row">
-      <div class="d-icon">🦄</div>
-      <div class="d-info">
-        <div class="d-title">罕见病特定药品</div>
-        <div class="d-desc">国家罕见病目录内疾病用药<br>指定药店直付</div>
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">02</div>
+        <h3 class="card-title">重大疾病医疗及外购药械费用医疗保险金</h3>
+        <p class="card-desc">初次确诊合同约定的100种重大疾病后，0免赔额赔付医疗费用。</p>
+        <div class="card-details"><ul>
+          <li><strong>重大疾病住院医疗费用</strong>：同一般医疗，外加重疾门急诊费用</li>
+          <li><strong>重大疾病特殊门诊医疗费用</strong>：门诊肾透析、恶性肿瘤-重度治疗、器官移植后抗排异</li>
+          <li><strong>重大疾病门诊手术医疗费用</strong></li>
+          <li><strong>重大疾病住院前后门急诊费用</strong>：住院前30天至出院后30天</li>
+          <li><strong>重大疾病门急诊医疗费用</strong>：诊疗费、急诊室费、检查检验费、药品费、救护车使用费（有独立限额）</li>
+          <li><strong>外购药品及外购医疗器械费用</strong></li>
+        </ul></div>
       </div>
-    </div>
-    <div class="drug-row">
-      <div class="d-icon">🌍</div>
-      <div class="d-info">
-        <div class="d-title">临床急需进口药品 + 指定医院住院</div>
-        <div class="d-desc">国内未上市的救命进口药<br>海南博鳌等指定医疗机构</div>
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">03</div>
+        <h3 class="card-title">特定疾病康复住院费用医疗保险金</h3>
+        <p class="card-desc">初次确诊16种特定疾病后180日内，必需且合理的康复住院治疗费用。</p>
+        <div class="card-details"><ul>
+          <li><strong>肿瘤类</strong>：恶性肿瘤——重度、脑/脊髓肿瘤切除术后</li>
+          <li><strong>神经系统类</strong>：脑卒中、颅脑损伤、脊髓损伤、帕金森、阿尔茨海默病、缺血缺氧性脑病、脑炎/脑膜炎后遗症</li>
+          <li><strong>心肺系统类</strong>：冠心病、心脏手术术后、慢性呼吸衰竭、重症肺炎、慢阻肺</li>
+          <li><strong>骨骼关节类</strong>：严重骨折（脊柱/髋部/颅骨/股骨）、关节置换手术</li>
+          <li>康复费用含<strong>物理治疗和中医理疗</strong>（针灸、推拿等）</li>
+        </ul></div>
       </div>
-    </div>
-    <div class="drug-row">
-      <div class="d-icon">⚡</div>
-      <div class="d-info">
-        <div class="d-title">指定疾病急需药品</div>
-        <div class="d-desc">特定急需药品清单覆盖<br>指定药店直付</div>
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">04</div>
+        <h3 class="card-title">特定药品费用医疗保险金</h3>
+        <p class="card-desc">覆盖四类特定药品及相关费用，含抗癌靶向药、罕见病药、进口急需药。</p>
+        <div class="card-details"><ul>
+          <li><strong>恶性肿瘤-重度院外特定药品费用</strong>：靶向药物 & 免疫治疗药物，指定药店直付</li>
+          <li><strong>恶性肿瘤-重度特定药品基因检测费用</strong>：指定机构全报，非指定机构报60%</li>
+          <li><strong>罕见病特定药品费用</strong>：12种罕见病，包括渐冻症、脊髓性肌萎缩症、血友病等</li>
+          <li><strong>特定进口药品费用及住院医疗费用</strong>：限《临床急需进口药品及适用疾病清单》，含特定医疗机构住院费</li>
+          <li><strong>指定疾病急需药品费用</strong></li>
+          <li>⚠️ <strong>预授权强制要求</strong>：所有特药和基因检测必须先申请审核，通过后直付</li>
+        </ul></div>
       </div>
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">05</div>
+        <h3 class="card-title">恶性肿瘤先进疗法医疗保险金</h3>
+        <p class="card-desc">初次确诊恶性肿瘤-重度，在指定医疗机构接受三种先进疗法的费用赔付。</p>
+        <div class="card-details"><ul>
+          <li><strong>质子重离子治疗</strong>：精准放疗，对正常组织伤害小。指定医疗机构（如上海质子重离子医院）</li>
+          <li><strong>硼中子俘获治疗（BNCT）</strong>：给癌细胞做标记后中子线定点爆破。国内尚在起步阶段</li>
+          <li><strong>光免疫疗法</strong>：让癌细胞对光敏感后照射杀死。日本已批头颈癌，国内临床阶段</li>
+          <li>三种疗法费用均<strong>不含</strong>化疗、免疫、内分泌、靶向药物（那部分走责任二或四）</li>
+        </ul></div>
+      </div>
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">06</div>
+        <h3 class="card-title">重大疾病异地转诊公共交通费用及住宿费用保险金</h3>
+        <p class="card-desc">因重大疾病需跨省住院，赔付转诊交通费和一名陪同亲属的住宿费。</p>
+        <div class="card-details"><ul>
+          <li><strong>公共交通费用</strong>：飞机经济舱、火车软卧/一等座为限</li>
+          <li><strong>住宿费用</strong>：标准间为限，单日限额约定</li>
+          <li>住宿累计给付天数以<strong>180日</strong>为限</li>
+          <li>需转出医院开具转院证明</li>
+        </ul></div>
+      </div>
+
+      <div class="coverage-card mandatory">
+        <span class="card-tag tag-mandatory">必选责任</span>
+        <div class="card-num">07</div>
+        <h3 class="card-title">重大疾病住院护工费用保险金</h3>
+        <p class="card-desc">重大疾病住院期间，由指定服务机构提供护工服务的日津贴赔付。</p>
+        <div class="card-details"><ul>
+          <li>按实际住院护工天数扣除免赔天数后给付</li>
+          <li>单次住院有<strong>最高给付天数限制</strong></li>
+          <li>累计给付天数以<strong>30日</strong>为限</li>
+          <li>需通过保险人指定流程审核</li>
+        </ul></div>
+      </div>
+
+      <div class="coverage-card optional">
+        <span class="card-tag tag-optional">可选责任</span>
+        <div class="card-num">08</div>
+        <h3 class="card-title">一般门急诊医疗及外购药械费用医疗保险金</h3>
+        <p class="card-desc">因意外或等待期后疾病进行的门诊/急诊治疗费用赔付。（可选附加）</p>
+        <div class="card-details"><ul>
+          <li><strong>一般门急诊医疗费用</strong>：诊疗费、急诊室费、检查检验费、治疗费、药品费、救护车使用费</li>
+          <li><strong>外购药品及外购医疗器械费用</strong></li>
+          <li>不可单独投保，须在必选责任基础上附加</li>
+        </ul></div>
+      </div>
+
     </div>
-  </div>
-</section>
 
-<!-- ===== ADVANCED THERAPIES ===== -->
-<section class="section fade-in" id="sec-therapy">
-  <h2 class="sec-title">⚡ 三大先进癌症疗法</h2>
-  <p class="sec-sub">传统医保一分不报的尖端治疗，这里全包</p>
-
-  <div class="therapy-grid">
-    <div class="therapy-card" style="border-top:2px solid var(--blue-a);">
-      <div class="t-icon">🔵</div>
-      <div class="t-name">质子重离子治疗</div>
-      <div class="t-en">Proton / Heavy Ion Therapy</div>
-      <div class="t-desc">利用质子或重离子束精准轰击肿瘤，对周围正常组织损伤极小。一个疗程约30万元。</div>
+    <!-- Claims Flow -->
+    <h3 style="margin-top:32px;font-size:15px;font-weight:700;">📋 理赔计算流程</h3>
+    <div class="flow-row" style="margin-top:10px;">
+      <div class="flow-step"><div class="step-num">Step 1</div><div class="step-text">发生医疗费用</div></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><div class="step-num">Step 2</div><div class="step-text">扣除医保/公费医疗补偿</div></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><div class="step-num">Step 3</div><div class="step-text">扣除约定免赔额</div></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><div class="step-num">Step 4</div><div class="step-text">乘以约定给付比例</div></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><div class="step-num">Step 5</div><div class="step-text">各分项限额内实际赔付</div></div>
     </div>
-    <div class="therapy-card" style="border-top:2px solid var(--purple-a);">
-      <div class="t-icon">🟣</div>
-      <div class="t-name">硼中子俘获治疗（BNCT）</div>
-      <div class="t-en">Boron Neutron Capture Therapy</div>
-      <div class="t-desc">向癌细胞输送硼元素，再用中子束照射，"引爆"癌细胞。对浸润性、复发性肿瘤效果显著。</div>
+  </section>
+
+  <!-- PARAMETERS -->
+  <section id="params">
+    <h2 class="section-title"><span class="icon icon-params">⚙️</span> 关键保险参数</h2>
+    <div class="divider"></div>
+
+    <div class="card" style="padding:24px;">
+      <table>
+        <thead><tr><th>参数项目</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>保险期间</td><td>1年（不保证续保）</td></tr>
+          <tr><td>等待期</td><td>投保时约定（意外伤害事故无等待期）</td></tr>
+          <tr><td>犹豫期</td><td>15天，犹豫期内退保全额无息退还保费</td></tr>
+          <tr><td>免赔额</td><td>投保时协商确定。医保统筹账户和公费医疗补偿不可抵扣免赔额；医保个人账户支出和其他商业保险补偿可抵扣</td></tr>
+          <tr><td>给付比例</td><td>投保时约定。若以社保/公费医疗身份投保但未获得补偿，按单独约定的比例给付</td></tr>
+          <tr><td>各分项保险金额</td><td>8项责任各自的保险金额由投保人与保险人约定并在保单载明，一经确定不可变更</td></tr>
+          <tr><td>总保险金额</td><td>8项责任累计给付总额上限，达到后合同终止</td></tr>
+          <tr><td>宽限期</td><td>分期交费时约定，宽限期内补交保费则保障继续</td></tr>
+          <tr><td>医院范围</td><td>中华人民共和国境内（不含港澳台）二级及二级以上公立医院<strong>普通部</strong></td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="therapy-card" style="border-top:2px solid var(--gold-a);">
-      <div class="t-icon">🟡</div>
-      <div class="t-name">光免疫疗法</div>
-      <div class="t-en">Photoimmunotherapy</div>
-      <div class="t-desc">用特异性抗体结合近红外光，精准杀死癌细胞。被称为继手术、放化疗、免疫之后的"第五种癌症疗法"。</div>
+  </section>
+
+  <!-- EXCLUSIONS -->
+  <section id="exclusions">
+    <h2 class="section-title"><span class="icon icon-warning">🚫</span> 责任免除（不赔什么）</h2>
+    <div class="divider"></div>
+
+    <div class="exclusion-section">
+      <div class="exclusion-header"><span class="num">1</span> 违法行为 & 故意行为</div>
+      <div class="exclusion-body"><ul>
+        <li>投保人对被保险人故意杀害或故意伤害</li>
+        <li>被保险人故意自杀、自伤（无民事行为能力人除外）</li>
+        <li>被保险人故意犯罪或抗拒依法采取的刑事强制措施</li>
+        <li>被保险人殴斗、醉酒、吸食或注射毒品</li>
+        <li>酒后驾驶、无有效驾驶证驾驶或无有效行驶证的机动交通工具</li>
+      </ul></div>
     </div>
-  </div>
-</section>
 
-<!-- ===== DISEASE ACCORDION ===== -->
-<section class="section fade-in" id="sec-disease">
-  <h2 class="sec-title">📋 康复保障：16种特定疾病</h2>
-  <p class="sec-sub">以下疾病初次确诊后180天内的康复住院费用可赔付</p>
-
-  <div class="acc-item open">
-    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
-      🧬 肿瘤类（2种）<span class="arr">▼</span>
-    </button>
-    <div class="acc-body"><div class="acc-inner">
-      <span class="disease-tag">恶性肿瘤——重度</span>
-      <span class="disease-tag">脑/脊髓肿瘤切除术后</span>
-    </div></div>
-  </div>
-
-  <div class="acc-item">
-    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
-      🧠 神经系统类（7种）<span class="arr">▼</span>
-    </button>
-    <div class="acc-body"><div class="acc-inner">
-      <span class="disease-tag">脑卒中</span>
-      <span class="disease-tag">颅脑损伤</span>
-      <span class="disease-tag">脊髓损伤</span>
-      <span class="disease-tag">帕金森</span>
-      <span class="disease-tag">阿尔茨海默病及其他痴呆症</span>
-      <span class="disease-tag">缺血缺氧性脑病</span>
-      <span class="disease-tag">脑炎/脑膜炎后遗症</span>
-    </div></div>
-  </div>
-
-  <div class="acc-item">
-    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
-      🫀 心肺系统类（5种）<span class="arr">▼</span>
-    </button>
-    <div class="acc-body"><div class="acc-inner">
-      <span class="disease-tag">冠心病</span>
-      <span class="disease-tag">心脏手术术后</span>
-      <span class="disease-tag">慢性呼吸衰竭</span>
-      <span class="disease-tag">重症肺炎</span>
-      <span class="disease-tag">慢性阻塞性肺疾病</span>
-    </div></div>
-  </div>
-
-  <div class="acc-item">
-    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">
-      🦴 骨骼关节疾病/损伤类（2种）<span class="arr">▼</span>
-    </button>
-    <div class="acc-body"><div class="acc-inner">
-      <span class="disease-tag">严重骨折</span>
-      <span class="disease-tag">关节置换手术</span>
-    </div></div>
-  </div>
-
-  <p style="margin-top:14px; font-size:12px; color:var(--text-3);">
-    ⚠️ 此外，重大疾病医疗保险金覆盖 <strong style="color:var(--blue-a);">100种重大疾病</strong>（含恶性肿瘤——重度、急性心梗、脑中风后遗症、重大器官移植等），符合中国保险行业协会2020版重疾定义规范。
-  </p>
-</section>
-
-<!-- ===== CLAIMS CALCULATOR ===== -->
-<section class="section fade-in" id="sec-calc">
-  <h2 class="sec-title">📊 赔付场景测算</h2>
-  <p class="sec-sub">假设：总保额600万（一般医疗300万+重疾医疗300万），免赔额1万，社保身份投保，赔付比例100%</p>
-
-  <div class="calc-scenario">
-    <div class="calc-scene-title">🏥 场景一：普通肺炎住院</div>
-    <div class="calc-bar-wrap">
-      <div class="calc-bar-fill" data-width="0.15" style="background:linear-gradient(90deg,var(--green-a),var(--green-b));"></div>
+    <div class="exclusion-section">
+      <div class="exclusion-header"><span class="num">2</span> 既往症 & 非标准治疗</div>
+      <div class="exclusion-body"><ul>
+        <li>被保险人所患<strong>既往症</strong>及保单特别约定的除外疾病</li>
+        <li><strong>等待期内</strong>确诊疾病所导致的医疗费用</li>
+        <li>未经科学或医学认可的<strong>试验性/研究性治疗</strong></li>
+        <li>所有<strong>基因疗法</strong>造成的医疗费用</li>
+        <li>所有<strong>细胞免疫疗法</strong>的医疗费用（合同约定范围并经审核的除外）</li>
+        <li>因<strong>职业病</strong>、<strong>医疗事故</strong>导致的医疗费用</li>
+        <li>在不符合合同约定的医院就诊发生的费用</li>
+      </ul></div>
     </div>
-    <div class="calc-detail">
-      <span>总费用 35,000元</span>
-      <span>社保报 25,000元</span>
-      <span style="color:var(--green-a);">尊享e生 报 0元*</span>
+
+    <div class="exclusion-section">
+      <div class="exclusion-header"><span class="num">3</span> 特定治疗 & 非疾病类项目</div>
+      <div class="exclusion-body"><ul>
+        <li>矮小症、早熟、肥胖症相关治疗、胃减容术</li>
+        <li>整形治疗、美容/整容治疗、变性手术及并发症</li>
+        <li>怀孕、流产、分娩（含剖腹产）、避孕、节育、不孕不育治疗</li>
+        <li>牙科疾病及相关治疗，屈光不正（意外所致除外）</li>
+        <li>预防、康复（合同约定康复治疗费除外）、休养/疗养、健康体检</li>
+        <li>眼镜、隐形眼镜、义齿、义眼、义肢、轮椅、拐杖、助听器等康复性器具</li>
+        <li>除9种人工器官（心脏瓣膜、人工晶体、人工关节等）以外的人工器官材料费</li>
+      </ul></div>
     </div>
-    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">*自付部分10,000元未超免赔额，免赔余额清零，下次就医不再扣免赔额</div>
-  </div>
 
-  <div class="calc-scenario">
-    <div class="calc-scene-title">🎯 场景二：肺癌靶向治疗（重疾）</div>
-    <div class="calc-bar-wrap">
-      <div class="calc-bar-fill" data-width="0.72" style="background:linear-gradient(90deg,var(--blue-a),var(--purple-a));"></div>
+    <div class="exclusion-section">
+      <div class="exclusion-header"><span class="num">4</span> 高风险 & 特定疾病</div>
+      <div class="exclusion-body"><ul>
+        <li>潜水、跳伞、攀岩、蹦极、滑雪、拳击等高风险运动</li>
+        <li>精神和行为障碍，遗传性疾病，先天性畸形、变形或染色体异常</li>
+        <li>感染艾滋病病毒或患艾滋病（职业/输血/器官移植原因导致的除外）</li>
+        <li>战争、军事行动、核爆炸、核辐射</li>
+      </ul></div>
     </div>
-    <div class="calc-detail">
-      <span>总费用 430,000元</span>
-      <span>社保报 50,000元</span>
-      <span style="color:var(--blue-a);">尊享e生 报 380,000元</span>
+
+    <div class="exclusion-section">
+      <div class="exclusion-header"><span class="num">特</span> 外购药械 & 特定药品特别免责</div>
+      <div class="exclusion-body"><ul>
+        <li>使用未获中国国家药品监督管理局许可或批准上市的药品或器械</li>
+        <li>在<strong>港澳台或境外</strong>接受治疗</li>
+        <li>药品/器械使用与说明书适应症和用法用量不符</li>
+        <li>经专科医生审核确定已<strong>耐药</strong>后仍继续购买该药品</li>
+        <li>未在指定药店购买的特定药品或未在指定医疗机构购买的进口药品</li>
+        <li>未按约定流程申请或经审核未通过</li>
+      </ul></div>
     </div>
-    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">重疾0免赔：住院+外购靶向药+基因检测，社保后100%赔付</div>
-  </div>
+  </section>
 
-  <div class="calc-scenario">
-    <div class="calc-scene-title">⚡ 场景三：质子重离子治疗</div>
-    <div class="calc-bar-wrap">
-      <div class="calc-bar-fill" data-width="0.52" style="background:linear-gradient(90deg,var(--purple-a),var(--purple-b));"></div>
+  <!-- SUMMARY -->
+  <section id="summary">
+    <h2 class="section-title"><span class="icon icon-info">💡</span> 要点总结</h2>
+    <div class="divider"></div>
+
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:14px;color:var(--primary);">✅ 核心优势</h3>
+      <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+        <li style="padding:8px 14px;background:var(--primary-light);border-radius:8px;font-size:13px;">🏥 <strong>保障全面：</strong>7+1项责任，覆盖住院、门急诊、外购药械、康复、先进疗法</li>
+        <li style="padding:8px 14px;background:var(--primary-light);border-radius:8px;font-size:13px;">💊 <strong>外购药械可赔：</strong>院外购买的必需药品和医疗器械（含高值耗材）在保障范围内</li>
+        <li style="padding:8px 14px;background:var(--primary-light);border-radius:8px;font-size:13px;">🔬 <strong>先进疗法覆盖：</strong>质子重离子、硼中子俘获、光免疫疗法三大前沿技术</li>
+        <li style="padding:8px 14px;background:var(--primary-light);border-radius:8px;font-size:13px;">🚑 <strong>异地转诊支持：</strong>跨省就医交通费+住宿费赔付，可带一名家属</li>
+        <li style="padding:8px 14px;background:var(--primary-light);border-radius:8px;font-size:13px;">🧬 <strong>特效药覆盖：</strong>靶向药、免疫药、罕见病药、进口急需药品均在清单范围内</li>
+        <li style="padding:8px 14px;background:var(--primary-light);border-radius:8px;font-size:13px;">👴 <strong>高龄可投：</strong>初次投保年龄最高70周岁，续保可达105周岁</li>
+      </ul>
+
+      <h3 style="font-size:15px;font-weight:700;margin:22px 0 14px;color:var(--danger);">⚠️ 主要风险点</h3>
+      <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+        <li style="padding:8px 14px;background:var(--danger-light);border-radius:8px;font-size:13px;">❌ <strong>不保证续保：</strong>一年期产品，产品停售或保险人不同意则无法续保</li>
+        <li style="padding:8px 14px;background:var(--danger-light);border-radius:8px;font-size:13px;">❌ <strong>免赔额门槛：</strong>社保统筹账户补偿不可抵扣免赔额</li>
+        <li style="padding:8px 14px;background:var(--danger-light);border-radius:8px;font-size:13px;">❌ <strong>既往症不保：</strong>投保前已存在的疾病及相关费用不在保障范围</li>
+        <li style="padding:8px 14px;background:var(--danger-light);border-radius:8px;font-size:13px;">❌ <strong>外购药流程严格：</strong>需指定药店、处方审核、授权申请等流程</li>
+        <li style="padding:8px 14px;background:var(--danger-light);border-radius:8px;font-size:13px;">❌ <strong>社保罚则：</strong>以社保身份投保但未获社保补偿的，按更低比例给付</li>
+        <li style="padding:8px 14px;background:var(--danger-light);border-radius:8px;font-size:13px;">❌ <strong>医院限普通部：</strong>特需部/国际部/VIP部/私立医院均不在保障范围</li>
+      </ul>
     </div>
-    <div class="calc-detail">
-      <span>总费用 310,000元</span>
-      <span>社保报 0元</span>
-      <span style="color:var(--purple-a);">尊享e生 报 310,000元</span>
+
+    <div class="warning-box" style="margin-top:20px;">
+      <strong>⚠️ 特别警示 — 不保证续保：</strong>此为一年期短期健康险，条款明确规定"本合同为不保证续保合同"。保险期满后能否续保存在不确定性，尤其是发生过理赔或健康状况发生变化时，可能面临无法续保的风险。
     </div>
-    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">质子重离子属自费项目，社保不报。尊享e生全额赔付</div>
-  </div>
 
-  <div class="calc-scenario">
-    <div class="calc-scene-title">🩹 场景四：脑卒中康复 + 护工</div>
-    <div class="calc-bar-wrap">
-      <div class="calc-bar-fill" data-width="0.28" style="background:linear-gradient(90deg,var(--green-a),var(--blue-b));"></div>
+    <div class="notice" style="margin-top:14px;">
+      <strong>📌 提示：</strong>以上分析基于保险条款原文提取，仅供参考。具体保险金额、免赔额、给付比例、等待期、药品清单等参数以实际保单载明为准。
     </div>
-    <div class="calc-detail">
-      <span>总费用 165,000元</span>
-      <span>社保报 20,000元</span>
-      <span style="color:var(--green-a);">尊享e生 报 145,000元</span>
-    </div>
-    <div style="font-size:10px;color:var(--text-3);margin-top:2px;">含康复住院90天+护工津贴30天（假设日津贴200元）</div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CLAIMS PROCESS ===== -->
-<section class="section fade-in" id="sec-claim">
-  <h2 class="sec-title">📬 理赔流程</h2>
-  <p class="sec-sub">四步走，保险公司30日内核定</p>
+</main>
 
-  <div class="steps">
-    <div class="step">
-      <div class="step-circle">1</div>
-      <div class="step-title">出险报案</div>
-      <div class="step-desc">发生保险事故后，及时拨打众安客服电话或通过官方App/官微报案，说明事故原因、经过和损失情况。</div>
-    </div>
-    <div class="step">
-      <div class="step-circle">2</div>
-      <div class="step-title">准备材料</div>
-      <div class="step-desc">保险金给付申请书、保险合同凭证、身份证件、医院病历/诊断书/处方/病理报告/费用发票和费用明细单、外购药证明（如涉及）等。</div>
-    </div>
-    <div class="step">
-      <div class="step-circle">3</div>
-      <div class="step-title">提交审核</div>
-      <div class="step-desc">将材料提交给众安。情形复杂的，保险公司在30日内作出核定。特药需提前授权申请和处方审核，审核通过后到指定药店取药（保险公司直付）。</div>
-    </div>
-    <div class="step">
-      <div class="step-circle">4</div>
-      <div class="step-title">理赔到账</div>
-      <div class="step-desc">属于保险责任的，达成赔付协议后10日内打款到银行卡。不属于保险责任的，3日内发出拒赔通知并说明理由。</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WARNINGS ===== -->
-<section class="section fade-in" id="sec-warn">
-  <h2 class="sec-title">⚠️ 投保须知 & 不赔清单</h2>
-  <p class="sec-sub">买之前必须知道的几件事</p>
-
-  <div class="warn-box" style="margin-bottom:16px;">
-    <div class="warn-title">🔴 关键提示</div>
-    <ul>
-      <li><strong>不保证续保：</strong>保险期间1年，期满需重新申请，产品停售或健康状况变化可能无法续保</li>
-      <li><strong>等待期30天：</strong>等待期内确诊疾病不赔（意外伤害无等待期）</li>
-      <li><strong>犹豫期15天：</strong>犹豫期内退保全额退款，犹豫期后退保只能退未满期净保费</li>
-      <li><strong>免赔额：</strong>需自付超出免赔额的部分才开始赔付（重疾责任同样适用免赔额，除非另有约定）</li>
-      <li><strong>社保身份：</strong>以社保身份投保但就医时未用社保结算，赔付比例会降低</li>
-    </ul>
-  </div>
-
-  <div class="warn-box">
-    <div class="warn-title">🚫 主要免责情形</div>
-    <ul>
-      <li>既往症及保险单特别约定的除外疾病</li>
-      <li>故意犯罪、酒驾、吸毒、无证驾驶期间发生的事故</li>
-      <li>美容/整容/减肥/变性手术、牙科疾病（意外除外）</li>
-      <li>怀孕、流产、分娩、不孕不育相关费用</li>
-      <li>未经国家批准的试验性治疗、基因疗法、细胞免疫疗法</li>
-      <li>高风险运动（潜水、跳伞、攀岩、赛车等）</li>
-      <li>港澳台及境外就医</li>
-      <li>遗传性疾病、先天性畸形、精神和行为障碍</li>
-      <li>未在保险人指定药店购买的特药、未经处方审核的特药</li>
-    </ul>
-  </div>
-
-  <div class="glass" style="padding:18px;margin-top:16px;text-align:center;">
-    <div style="font-size:13px;color:var(--text-2);">
-      📋 投保年龄：<strong>30天~70周岁</strong> · 最高续保至 <strong>105周岁</strong><br>
-      🏢 承保公司：<strong>众安在线财产保险股份有限公司</strong>
-    </div>
-  </div>
-</section>
-
-</div><!-- /wrap -->
-
-<!-- ===== BOTTOM CTA ===== -->
-<div class="cta-bar">
-  <a href="#" class="cta-main">🔍 了解详情 / 获取报价</a>
-</div>
-
-<script>
-// ===== NUMBER COUNTER ANIMATION =====
-function animateCount(el) {
-  const target = parseInt(el.dataset.count);
-  if (isNaN(target)) return;
-  let cur = 0;
-  const inc = target / (1200 / 16);
-  const t = setInterval(() => {
-    cur = Math.min(cur + inc, target);
-    el.textContent = Math.floor(cur);
-    if (cur >= target) clearInterval(t);
-  }, 16);
-}
-
-// ===== FADE IN ON SCROLL =====
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      // Trigger progress bars inside
-      e.target.querySelectorAll('.calc-bar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width * 100 + '%';
-      });
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
-
-// ===== NAV PILLS ACTIVE TRACKING =====
-const navPills = document.querySelectorAll('.nav-pill');
-const sectionIds = Array.from(navPills).map(p => p.dataset.target);
-
-const pillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navPills.forEach(p => p.classList.remove('active'));
-      const active = document.querySelector(`.nav-pill[data-target="${entry.target.id}"]`);
-      if (active) active.classList.add('active');
-    }
-  });
-}, { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' });
-
-sectionIds.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) pillObserver.observe(el);
-});
-
-// Smooth scroll for nav pills
-navPills.forEach(pill => {
-  pill.addEventListener('click', () => {
-    const target = document.getElementById(pill.dataset.target);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
-  // Animate hero numbers
-  document.querySelectorAll('[data-count]').forEach(animateCount);
-
-  // Trigger already-visible fade-in elements
-  document.querySelectorAll('.fade-in').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('visible');
-      el.querySelectorAll('.calc-bar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width * 100 + '%';
-      });
-    }
-  });
-});
-</script>
+<footer>
+  <p>本分析基于《众安在线财产保险股份有限公司 个人医疗保险条款（互联网 2025版）》注册号：C00017932512025120573893</p>
+  <p>数据来源：产品条款原文 | 分析生成日期：2026-08-02 | 仅供参考，不构成投保建议</p>
+</footer>
 
 </body>
 </html>
