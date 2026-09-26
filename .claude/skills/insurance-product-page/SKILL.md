@@ -1,13 +1,11 @@
 ---
 name: insurance-product-page
-description: 从保险产品条款PDF一键生成博客文章 + 精美H5详解页，并自动推送到Git。Use when user says "帮我生成XXX产品页"、"分析这个保险产品条款"、"给XXX写一篇博客"，或指定了 product/ 目录下的PDF文件时。
+description: 产品解析的专属步骤：条款 PDF 提取、产品文章结构、H5 详解页规范。由 insurance-article 流水线在输入是具体保险产品时加载；单独使用时也要走 insurance-article 的核查、审阅和发布流程。
 ---
 
-# 保险产品页一键生成
+# 保险产品解析
 
-## 快速开始
-
-用户说"帮我分析 product/XXX/保险条款.pdf 并生成产品页"时，按以下顺序执行。
+这个 skill 只负责产品解析特有的部分：提取条款（Step 1）、写文章（Step 2）、做 H5（Step 3–5）。事实核查、读者审阅、去 AI 味、视觉审阅、预览和发布，都按 `insurance-article` 的第 4–9 步走。
 
 ## 执行清单
 
@@ -30,15 +28,14 @@ python .claude/skills/insurance-product-page/scripts/extract_pdf.py \
 
 文件路径：`content/posts/<slug>.md`
 
-**⚠️ 先读完 [REFERENCE.md § blog-writing-style](REFERENCE.md#blog-writing-style) 再动笔。**
+**⚠️ 先读完 `writing/写作规范.md`、`writing/AI味规则.md` 和 [REFERENCE.md](REFERENCE.md#blog-writing-style) 再动笔。**
 
 核心原则：
 - **读者是谁**：保险小白，对医学/保险术语没有概念。所有专有名词必须用大白话解释。
 - **目的是什么**：让读者深切感受到这款产品能在什么生活场景下帮到他，不是做学术分析。
-- **优势重点突出，劣势一笔带过**。公司背景不需要展开。
+- **优势和局限都讲清楚**，写明适合谁、不适合谁、哪些情况不赔。公司背景不需要展开。
 - Front Matter 参考：`howtopost.txt`
 - 详细写作规范见 [REFERENCE.md](REFERENCE.md#blog-article)
-- **AI 写作避坑清单**见 [REFERENCE.md](REFERENCE.md#ai-anti-patterns)
 
 ### Step 3 — 生成 H5 详解页
 
@@ -95,16 +92,9 @@ hugo --minify
 
 确认无 ERROR，`Static files` 计数 ≥ 1。
 
-### Step 7 — Git 提交推送
+### Step 7 — 进入审阅流程
 
-```bash
-git add content/posts/<slug>.md \
-        static/pages/<slug>/index.html \
-        layouts/shortcodes/rawhtml.html \
-        hugo.toml
-git commit -m "feat: 新增<产品名>博客文章与H5详解页"
-git push origin master
-```
+不要在这里 commit 或 push。回到 `insurance-article` 第 4 步（事实核查），把 `product/<产品目录>/条款文本.txt` 作为条款依据交给 fact-checker。
 
 ## 常见问题
 

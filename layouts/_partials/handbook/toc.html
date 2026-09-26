@@ -1,0 +1,23 @@
+{{- /* 整本手册的目录。参数：当前页面 */ -}}
+{{- $cur := . -}}
+{{- $root := site.GetPage "/handbook" -}}
+{{- with $root }}
+<nav class="hb-toc" aria-label="手册目录">
+  <a class="hb-toc-home" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  <ol class="hb-toc-chapters">
+    {{- range .Sections.ByWeight }}
+    {{- $inChapter := or (eq $cur .) (and $cur.IsPage (eq $cur.CurrentSection .)) }}
+    <li class="hb-toc-chapter{{ if $inChapter }} is-current{{ end }}">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- with .RegularPages.ByWeight }}
+      <ol>
+        {{- range . }}
+        <li{{ if eq $cur . }} class="is-active" aria-current="page"{{ end }}><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+      </ol>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ol>
+</nav>
+{{- end }}

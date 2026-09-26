@@ -1,0 +1,169 @@
+/* ========== 全站图示与强调色（视觉规范见 writing/视觉规范.md） ========== */
+:root {
+    --fig-paper: var(--theme);
+    --fig-paper-2: rgb(246, 247, 245);
+    --fig-ink: rgb(38, 42, 46);
+    --fig-muted: rgb(96, 104, 112);
+    --fig-soft: rgb(140, 147, 153);
+    --fig-rule: rgba(38, 42, 46, 0.14);
+    --fig-accent: #1f6f5c;            /* 保障、正向：松绿 */
+    --fig-accent-tint: rgba(31, 111, 92, 0.09);
+    --fig-caution: #b0492b;           /* 不赔、风险：砖红，只用于警示 */
+    --fig-caution-tint: rgba(176, 73, 43, 0.08);
+    --fig-link: #2f5d9b;
+}
+:root[data-theme="dark"] {
+    --fig-paper-2: rgb(38, 39, 42);
+    --fig-ink: rgb(222, 223, 224);
+    --fig-muted: rgb(170, 173, 176);
+    --fig-soft: rgb(130, 134, 138);
+    --fig-rule: rgba(222, 223, 224, 0.16);
+    --fig-accent: #5fb89f;
+    --fig-accent-tint: rgba(95, 184, 159, 0.12);
+    --fig-caution: #e08463;
+    --fig-caution-tint: rgba(224, 132, 99, 0.12);
+    --fig-link: #7ea6de;
+}
+
+/* 文章内嵌 SVG 图示：<figure class="fig"> <svg>…</svg> <figcaption>…</figcaption> </figure> */
+.post-content figure.fig {
+    margin: 28px 0;
+    text-align: center;
+}
+.post-content figure.fig svg {
+    width: 100%;
+    height: auto;
+    max-width: 680px;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+.post-content figure.fig figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--secondary);
+}
+.post-content .fig-scroll { overflow-x: auto; }
+.post-content .fig-scroll svg { min-width: 560px; }
+
+/* 一句话说清 */
+.post-content blockquote.tldr,
+.post-content .tldr {
+    border-inline-start: 4px solid var(--fig-accent);
+    background: var(--fig-accent-tint);
+    padding: 14px 18px;
+    border-radius: 4px;
+    color: var(--content);
+}
+.post-content .tldr p { margin: 0; }
+
+/* 提示框：误区 / 注意 */
+.post-content .note-caution {
+    border-inline-start: 4px solid var(--fig-caution);
+    background: var(--fig-caution-tint);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+.post-content .note-caution > :first-child { margin-top: 0; }
+.post-content .note-caution > :last-child { margin-bottom: 0; }
+
+/* 免责声明 */
+.hb-disclaimer {
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--secondary);
+}
+
+/* ========== 手册导航 ========== */
+.hb-toc ol { list-style: none; padding: 0; margin: 0; }
+.hb-toc a { color: var(--secondary); text-decoration: none; }
+.hb-toc a:hover { color: var(--primary); }
+.hb-toc-home { display: block; font-weight: 600; color: var(--primary) !important; margin-bottom: 10px; }
+.hb-toc-chapter { margin: 8px 0; font-size: 14px; }
+.hb-toc-chapter > a { font-weight: 500; color: var(--primary); }
+.hb-toc-chapter > ol { margin: 4px 0 0 12px; display: none; }
+.hb-toc-chapter.is-current > ol { display: block; }
+.hb-toc-chapter > ol li { margin: 4px 0; font-size: 13px; line-height: 1.5; }
+.hb-toc li.is-active > a { color: var(--fig-accent); font-weight: 600; }
+
+.hb-toc-inline {
+    margin: 0 0 24px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--entry);
+}
+.hb-toc-inline summary { cursor: pointer; font-size: 14px; color: var(--secondary); }
+.hb-toc-inline .hb-toc { margin-top: 10px; }
+.hb-toc-inline .hb-toc-chapter > ol { display: block; }
+
+.hb-sidebar { display: none; }
+@media screen and (min-width: 1320px) {
+    .hb-sidebar {
+        display: block;
+        position: fixed;
+        top: 90px;
+        left: max(24px, calc(50vw - 360px - 300px));
+        width: 250px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        padding-right: 8px;
+    }
+    .hb-toc-inline { display: none; }
+}
+
+/* 章节列表 */
+.hb-chapter-list { list-style: none; padding: 0; margin: 20px 0; counter-reset: none; }
+.hb-chapter-list > li {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+.hb-chapter-title { font-size: 20px; font-weight: 600; color: var(--primary); }
+.hb-single-chapter .hb-chapter-title { font-size: 17px; }
+.hb-chapter-list p { margin: 6px 0 0; color: var(--secondary); font-size: 15px; }
+.hb-chapter-list ol { list-style: none; padding: 0; margin: 10px 0 0; }
+.hb-chapter-list ol li { margin: 6px 0; font-size: 15px; }
+.hb-chapter-list ol a { color: var(--content); }
+.hb-soon { color: var(--tertiary) !important; font-size: 14px; }
+
+/* 首页“从这里开始”入口 */
+.start-here {
+    display: block;
+    margin: 18px 0 4px;
+    padding: 16px 18px;
+    border: 1px solid var(--fig-accent);
+    border-radius: 8px;
+    background: var(--fig-accent-tint);
+    color: var(--primary);
+    text-decoration: none;
+}
+.start-here strong { display: block; font-size: 17px; }
+.start-here span { font-size: 14px; color: var(--secondary); }
+
+/* ========== SVG 图示语义类（写图时只用这些类，不写死颜色） ========== */
+.fig svg text { fill: var(--fig-ink); font-size: 14px; }
+.fig svg .t-title { font-size: 16px; font-weight: 600; }
+.fig svg .t-sub { fill: var(--fig-muted); font-size: 12px; }
+.fig svg .t-soft { fill: var(--fig-soft); font-size: 12px; }
+.fig svg .t-accent { fill: var(--fig-accent); font-weight: 600; }
+.fig svg .t-caution { fill: var(--fig-caution); font-weight: 600; }
+.fig svg .bg { fill: var(--fig-paper); }
+.fig svg .box { fill: var(--fig-paper); stroke: var(--fig-ink); stroke-width: 1; }
+.fig svg .box-soft { fill: var(--fig-paper-2); stroke: var(--fig-rule); stroke-width: 1; }
+.fig svg .box-focal { fill: var(--fig-accent-tint); stroke: var(--fig-accent); stroke-width: 1.2; }
+.fig svg .box-caution { fill: var(--fig-caution-tint); stroke: var(--fig-caution); stroke-width: 1.2; }
+.fig svg .box-dashed { fill: none; stroke: var(--fig-soft); stroke-width: 1; stroke-dasharray: 4 3; }
+.fig svg .line { fill: none; stroke: var(--fig-muted); stroke-width: 1.2; }
+.fig svg .line-accent { fill: none; stroke: var(--fig-accent); stroke-width: 1.6; }
+.fig svg .line-caution { fill: none; stroke: var(--fig-caution); stroke-width: 1.4; }
+.fig svg .line-dashed { fill: none; stroke: var(--fig-soft); stroke-width: 1; stroke-dasharray: 5 4; }
+.fig svg .rule { stroke: var(--fig-rule); stroke-width: 1; }
+.fig svg .head { fill: var(--fig-muted); }
+.fig svg .head-accent { fill: var(--fig-accent); }
+.fig svg .head-caution { fill: var(--fig-caution); }
+.fig svg .fill-accent { fill: var(--fig-accent); }
+.fig svg .fill-caution { fill: var(--fig-caution); }
+.fig svg .fill-muted { fill: var(--fig-muted); }
+.fig svg .fill-soft { fill: var(--fig-paper-2); }

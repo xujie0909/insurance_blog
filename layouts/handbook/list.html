@@ -1,0 +1,50 @@
+{{- define "main" }}
+<aside class="hb-sidebar">
+  {{ partial "handbook/toc.html" . }}
+</aside>
+
+<header class="page-header hb-article">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}
+  <div class="post-description">{{ . | markdownify }}</div>
+  {{- end }}
+</header>
+
+<div class="hb-article">
+  {{- with .Content }}
+  <div class="post-content md-content">{{ . }}</div>
+  {{- end }}
+
+  {{- if .Sections }}
+  {{/* 手册首页：列出所有章节 */}}
+  <ol class="hb-chapter-list">
+    {{- range .Sections.ByWeight }}
+    <li>
+      <a class="hb-chapter-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- with .Description }}<p>{{ . }}</p>{{ end }}
+      {{- with .RegularPages.ByWeight }}
+      <ol>
+        {{- range . }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+      </ol>
+      {{- else }}
+      <p class="hb-soon">本章正在写作中</p>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ol>
+  {{- else }}
+  {{/* 章节页：列出本章文章 */}}
+  <ol class="hb-chapter-list hb-single-chapter">
+    {{- range .RegularPages.ByWeight }}
+    <li>
+      <a class="hb-chapter-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- with .Description }}<p>{{ . }}</p>{{ end }}
+    </li>
+    {{- else }}
+    <li class="hb-soon">本章正在写作中</li>
+    {{- end }}
+  </ol>
+  {{- end }}
+</div>
+{{- end }}

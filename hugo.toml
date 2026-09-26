@@ -21,10 +21,13 @@ paginate = 10
   ShowToc = true
   TocOpen = false
   dateFormat = "2006-01-02"
+  mainSections = ["posts"]
 
 [params.homeInfoParams]
   Title = "欢迎来到保险知识博客"
-  Content = "这里有最实用的保险攻略，帮你少踩坑、买对险。"
+  Content = """这里有最实用的保险攻略，帮你少踩坑、买对险。
+
+<a class="start-here" href="/handbook/"><strong>第一次了解保险？从这里开始</strong><span>保险知识手册：按顺序读，从“保险是什么”到“怎么给全家配置”</span></a>"""
 
 [[params.socialIcons]]
   name = "github"
@@ -32,8 +35,13 @@ paginate = 10
 
 [menu]
   [[menu.main]]
+    identifier = "handbook"
+    name = "手册"
+    url = "/handbook/"
+    weight = 5
+  [[menu.main]]
     identifier = "posts"
-    name = "文章"
+    name = "产品解析"
     url = "/posts/"
     weight = 10
   [[menu.main]]

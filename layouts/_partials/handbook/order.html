@@ -1,0 +1,14 @@
+{{- /* 手册阅读顺序：章节按 weight 排，章节内文章按 weight 排。返回扁平的页面列表。 */ -}}
+{{- $root := site.GetPage "/handbook" -}}
+{{- $flat := slice -}}
+{{- with $root -}}
+  {{- range .Sections.ByWeight -}}
+    {{- range .RegularPages.ByWeight -}}
+      {{- $flat = $flat | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- range .RegularPages.ByWeight -}}
+    {{- $flat = $flat | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $flat -}}
