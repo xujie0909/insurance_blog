@@ -1,7 +1,7 @@
 ---
 slug: insurer-bankruptcy
 title: 保险公司倒闭了，我的保单怎么办？
-file: content/handbook/basics/insurer-bankruptcy.md
+file: content/posts/insurer-bankruptcy.md
 started: 2026-09-26
 ---
 

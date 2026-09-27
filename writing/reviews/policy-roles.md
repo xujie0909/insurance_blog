@@ -1,7 +1,7 @@
 ---
 slug: policy-roles
 title: 投保人、被保险人、受益人，分别是谁？一张保单里的三个角色
-file: content/handbook/basics/policy-roles.md
+file: content/posts/policy-roles.md
 started: 2026-09-26
 ---
 

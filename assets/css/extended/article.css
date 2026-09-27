@@ -1,4 +1,5 @@
-/* ========== 全站图示与强调色（视觉规范见 writing/视觉规范.md） ========== */
+/* ========== 文章样式：图示、强调色、提示框（视觉规范见 writing/视觉规范.md）
+   这是 PaperMod 的 assets/css/extended 扩展点，换主题时把这个文件引入新主题即可 ========== */
 :root {
     --fig-paper: var(--theme);
     --fig-paper-2: rgb(246, 247, 245);
@@ -76,7 +77,7 @@
 .post-content .note-caution > :last-child { margin-bottom: 0; }
 
 /* 免责声明 */
-.hb-disclaimer {
+.post-disclaimer {
     margin-top: 40px;
     padding-top: 14px;
     border-top: 1px solid var(--border);
@@ -84,59 +85,6 @@
     line-height: 1.7;
     color: var(--secondary);
 }
-
-/* ========== 手册导航 ========== */
-.hb-toc ol { list-style: none; padding: 0; margin: 0; }
-.hb-toc a { color: var(--secondary); text-decoration: none; }
-.hb-toc a:hover { color: var(--primary); }
-.hb-toc-home { display: block; font-weight: 600; color: var(--primary) !important; margin-bottom: 10px; }
-.hb-toc-chapter { margin: 8px 0; font-size: 14px; }
-.hb-toc-chapter > a { font-weight: 500; color: var(--primary); }
-.hb-toc-chapter > ol { margin: 4px 0 0 12px; display: none; }
-.hb-toc-chapter.is-current > ol { display: block; }
-.hb-toc-chapter > ol li { margin: 4px 0; font-size: 13px; line-height: 1.5; }
-.hb-toc li.is-active > a { color: var(--fig-accent); font-weight: 600; }
-
-/* 和 PaperMod 的文章目录（details.toc）同一套外观 */
-.hb-toc-inline {
-    margin-bottom: var(--content-gap);
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-}
-[data-theme="dark"] .hb-toc-inline { background: var(--entry); }
-.hb-toc-inline summary { cursor: pointer; padding: 0.3rem 1.2rem; font-weight: 500; }
-.hb-toc-inline .hb-toc { padding: 0 1.2rem 0.8rem 1.6rem; }
-.hb-toc-inline .hb-toc-chapter > ol { display: block; }
-
-.hb-sidebar { display: none; }
-@media screen and (min-width: 1360px) {
-    .hb-sidebar {
-        display: block;
-        position: fixed;
-        top: 90px;
-        left: max(24px, calc(50vw - 360px - 300px));
-        width: 250px;
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-        padding-right: 8px;
-    }
-    .hb-toc-inline { display: none; }
-}
-
-/* 章节列表 */
-.hb-chapter-list { list-style: none; padding: 0; margin: 20px 0; counter-reset: none; }
-.hb-chapter-list > li {
-    padding: 18px 0;
-    border-bottom: 1px solid var(--border);
-}
-.hb-chapter-title { font-size: 20px; font-weight: 600; color: var(--primary); }
-.hb-single-chapter .hb-chapter-title { font-size: 17px; }
-.hb-chapter-list p { margin: 6px 0 0; color: var(--secondary); font-size: 15px; }
-.hb-chapter-list ol { list-style: none; padding: 0; margin: 10px 0 0; }
-.hb-chapter-list ol li { margin: 6px 0; font-size: 15px; }
-.hb-chapter-list ol a { color: var(--content); }
-.hb-soon { color: var(--tertiary) !important; font-size: 14px; }
 
 /* 首页“从这里开始”入口 */
 .start-here {
@@ -177,3 +125,4 @@
 .fig svg .fill-caution { fill: var(--fig-caution); }
 .fig svg .fill-muted { fill: var(--fig-muted); }
 .fig svg .fill-soft { fill: var(--fig-paper-2); }
+.start-here, .start-here strong, .start-here span { text-decoration: none; box-shadow: none; }

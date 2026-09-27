@@ -4,10 +4,10 @@
 并检查横向溢出和图示里过小的文字，结果写入 report.json。
 
 用法（先在另一个终端运行 hugo server）：
-    python writing/scripts/screenshot.py handbook/basics/is-insurance-a-scam/ [更多路径...]
+    python writing/scripts/screenshot.py posts/is-insurance-a-scam/ [更多路径...]
     python writing/scripts/screenshot.py --base http://localhost:1313 pages/tools/xxx/
 
-路径不要带开头的斜杠：Git Bash 会把 /handbook/ 改写成 Windows 路径。
+路径不要带开头的斜杠：Git Bash 会把 /posts/ 改写成 Windows 路径。
 
 输出目录：writing/screenshots/<页面路径>/
 整页截图为 <mobile|desktop>-<light|dark>.png，每张图示另存为 fig<N>-<视口>-<主题>.png。

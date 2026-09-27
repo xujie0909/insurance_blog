@@ -1,7 +1,7 @@
 ---
 slug: social-vs-commercial
 title: 有社保了，还要买商业保险吗？先看医保管到哪、管不到哪
-file: content/handbook/basics/social-vs-commercial.md
+file: content/posts/social-vs-commercial.md
 started: 2026-09-26
 ---
 

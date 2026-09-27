@@ -4,8 +4,8 @@ description: "投保人签合同、交钱，也是能退保的人；被保险人
 date: 2026-09-26
 lastmod: 2026-09-27
 reviewed: 2026-09-27
-weight: 50
-tags: ["入门", "受益人"]
+categories: ["保险入门"]
+tags: ["入门", "受益人", "投保"]
 ShowToc: true
 ---
 
@@ -124,8 +124,8 @@ ShowToc: true
 
 ## 下一步读什么
 
-- 想先弄明白保险是怎么运作的，读[《保险到底是什么》](/handbook/basics/what-is-insurance/)。
-- 想知道重疾险、医疗险、寿险各管什么，读[第二章 四大基础险种](/handbook/types/)。
+- 想先弄明白保险是怎么运作的，读[《保险到底是什么》](/posts/what-is-insurance/)。
+- 想知道重疾险、医疗险、寿险各管什么，读讲各个险种的文章（还在写）。
 
 ## 参考资料
 

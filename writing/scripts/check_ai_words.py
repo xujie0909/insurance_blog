@@ -1,7 +1,7 @@
 """按 writing/AI味规则.md 的“禁用词”一节扫描文章，列出命中位置。
 
 用法：
-    python writing/scripts/check_ai_words.py content/handbook/basics/xxx.md
+    python writing/scripts/check_ai_words.py content/posts/xxx.md
 
 只扫描正文，跳过 front matter、代码块、HTML/SVG 标签内部和“参考资料”一节。
 禁用词后面括号里的说明（如“标题除外”）只作提示，不参与匹配。

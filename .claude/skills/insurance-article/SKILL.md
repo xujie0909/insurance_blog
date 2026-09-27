@@ -1,6 +1,6 @@
 ---
 name: insurance-article
-description: 保险知识手册的写作流水线：选题 → 要素材 → 查资料 → 写作 → 事实核查 → 读者对抗审阅 → 去 AI 味 → 视觉审阅 → 交作者预览 → 发布。Use when the user gives an insurance concept or product to write about ("写一篇关于等待期的"、"帮我写XX产品"、"写手册第X章"), provides a product terms PDF, or asks to revise/re-review an existing article.
+description: 保险知识文章的写作流水线：选题 → 要素材 → 查资料 → 写作 → 事实核查 → 读者对抗审阅 → 去 AI 味 → 视觉审阅 → 交作者预览 → 发布。Use when the user gives an insurance concept or product to write about ("写一篇关于等待期的"、"帮我写XX产品"、"写手册第X章"), provides a product terms PDF, or asks to revise/re-review an existing article.
 ---
 
 # 保险文章流水线
@@ -18,14 +18,14 @@ description: 保险知识手册的写作流水线：选题 → 要素材 → 查
 
 | 输入 | 路径 |
 |---|---|
-| 概念或话题（“等待期”“有社保还要买保险吗”） | 手册文章，写到 `content/handbook/<章节>/<slug>.md` |
+| 概念或话题（“等待期”“有社保还要买保险吗”） | 知识文章，写到 `content/posts/<slug>.md` |
 | 具体产品、条款 PDF | 产品解析：第 3 步和第 4 步改用 [insurance-product-page](../insurance-product-page/SKILL.md) 的提取、文章结构和 H5 规范，其余步骤照走 |
 | 修改或重审已有文章 | 从第 5 步开始，把现有文章当初稿 |
-| “写第 X 章”“写这一批” | 批量模式，见文末 |
+| “写某个主题的一批”“写这一批” | 批量模式，见文末 |
 
-手册文章先定位：对照 `content/handbook/` 现有章节，定下章节、`weight`（章节内顺序，按 10、20、30 编号）和英文 slug。
+所有文章都放在 `content/posts/`，和产品解析同一层级，不另设栏目，靠分类和标签关联，这样换主题时不用兼容特殊格式。知识文章先定位：对照 [writing/手册大纲.md](../../../writing/手册大纲.md)，定下它属于哪个主题（决定 `categories`）、英文 slug 和标签。
 
-**完成标准**：路径、slug、章节位置确定，并告诉了作者。
+**完成标准**：路径、slug、分类、标签确定，并告诉了作者。
 
 ## 1. 列素材清单
 
@@ -50,7 +50,7 @@ description: 保险知识手册的写作流水线：选题 → 要素材 → 查
 
 - 按七段骨架写，front matter 用下面的模板。
 - 需要图示时，按 [writing/视觉规范.md](../../../writing/视觉规范.md) 画：说明性图示加载 `diagram-design`，数据图加载 `dataviz`，互动工具加载 `frontend-design`。先问一句：这张图比文字更快让读者懂吗？
-- 链接手册里已有的相关文章；还没写的文章先不链接，在审阅记录里记下来。
+- 链接站内已有的相关文章（`/posts/<slug>/`）；还没写的文章不放链接，用“讲某某的文章（还在写）”这样的说法，并在审阅记录里记下来。不要在正文里写“第几章”，站点没有章节结构。
 
 ```yaml
 ---
@@ -59,7 +59,7 @@ description: "一句话摘要，显示在列表页"
 date: YYYY-MM-DD
 lastmod: YYYY-MM-DD
 reviewed: YYYY-MM-DD   # 最后一次核实事实的日期
-weight: 10
+categories: ["保险入门"]   # 按 writing/手册大纲.md 的主题分类
 tags: ["入门"]
 ShowToc: true
 ---
@@ -130,21 +130,20 @@ ShowToc: true
 
 1. `reviewed` 和 `lastmod` 更新为今天
 2. 只提交这篇文章相关的文件：文章、图片、H5、审阅记录；不用 `git add -A`
-3. commit 信息：`feat(handbook): 新增《标题》` 或 `feat(posts): …`
-4. `git push origin master`，CI 自动部署
+3. commit 信息：`feat(posts): 新增《标题》`
+4. 作者要求推送时才 `git push origin master`，CI 自动部署；没说推送就只提交到本地
 
-## 手册文章替代旧文章
+## 新文章替代旧文章
 
-写到下面这些主题时，新文章替代旧文章：在新文章 front matter 里加 `aliases`，并删除旧文章，让旧链接跳转到新文章。
+写到下面这些主题时，新文章替代旧文章。slug 不同的，在新文章 front matter 里加 `aliases` 指向旧地址，并删除旧文章，让旧链接跳转过来。
 
 | 旧文章 | 被替代的主题 |
 |---|---|
-| `content/posts/what-is-insurance.md`（`/posts/what-is-insurance/`） | 第一章“保险到底是什么” |
-| `content/posts/health-insurance-guide.md`（`/posts/health-insurance-guide/`） | 第二章“百万医疗险” |
+| `content/posts/health-insurance-guide.md`（`/posts/health-insurance-guide/`） | 险种类“百万医疗险” |
 
 ## 批量模式
 
-作者说“写第 X 章”或给出一批主题时：
+作者说“写某个主题的一批”“写大纲里的第 X 部分”或给出一批主题时：
 
 1. 列出这一批的文章清单（4–6 篇）、每篇的 slug 和顺序，以及整批的素材清单，一次性问作者。
 2. 每篇**单独**走完第 2–7 步，每篇都有自己的审阅记录。

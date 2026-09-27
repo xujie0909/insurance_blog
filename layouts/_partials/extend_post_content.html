@@ -1,1 +1,2 @@
-{{- if eq .Section "posts" }}{{ partial "handbook/disclaimer.html" . }}{{ end }}
+{{- /* PaperMod 的扩展点：在文章正文后插入免责声明。换主题时，把 disclaimer.html 挂到新主题的文章模板里即可。 */ -}}
+{{- if eq .Section "posts" }}{{ partial "disclaimer.html" . }}{{ end }}

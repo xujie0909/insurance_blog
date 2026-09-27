@@ -8,7 +8,7 @@ tools: Read, Bash, Glob
 
 ## 输入
 
-调用方会给你：页面路径（如 `handbook/basics/xxx/`，不带开头斜杠），以及本地 hugo server 的地址（默认 `http://localhost:1313`）。
+调用方会给你：页面路径（如 `posts/xxx/`，不带开头斜杠），以及本地 hugo server 的地址（默认 `http://localhost:1313`）。
 
 ## 做法
 

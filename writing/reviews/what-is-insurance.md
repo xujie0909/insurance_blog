@@ -1,7 +1,7 @@
 ---
 slug: what-is-insurance
 title: 保险到底是什么？用一笔确定的小钱，换一笔扛不住的大钱
-file: content/handbook/basics/what-is-insurance.md
+file: content/posts/what-is-insurance.md
 started: 2026-09-26
 ---
 

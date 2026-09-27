@@ -1,7 +1,7 @@
 ---
 slug: is-insurance-a-scam
 title: 保险是骗人的吗？把“不赔”的原因摊开来看
-file: content/handbook/basics/is-insurance-a-scam.md
+file: content/posts/is-insurance-a-scam.md
 started: 2026-09-26
 ---
 
