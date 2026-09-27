@@ -30,50 +30,39 @@ ShowToc: true
   </defs>
   <text class="t-sub" x="68" y="20" text-anchor="middle">你经历的环节</text>
   <text class="t-sub" x="246" y="20" text-anchor="middle">可能出的问题</text>
-
   <!-- 左列：环节之间的竖向连线（先画线，再画框） -->
   <path class="line" d="M68 92 V112" marker-end="url(#scam-arrow)"/>
   <path class="line" d="M68 172 V192" marker-end="url(#scam-arrow)"/>
   <path class="line" d="M68 252 V288" marker-end="url(#scam-arrow)"/>
-
   <!-- 左右之间的横向连线 -->
   <path class="line-dashed" d="M124 64 H144"/>
   <path class="line-dashed" d="M124 144 H144"/>
   <path class="line-dashed" d="M124 224 H144"/>
   <path class="line-caution" d="M124 324 H144"/>
   <path class="line-caution" d="M124 404 H144"/>
-
   <!-- 左列：环节 -->
   <rect class="box" x="12" y="36" width="112" height="56" rx="6"/>
   <text x="68" y="69" text-anchor="middle">听销售介绍</text>
-
   <rect class="box" x="12" y="116" width="112" height="56" rx="6"/>
   <text x="68" y="149" text-anchor="middle">填健康告知</text>
-
   <rect class="box" x="12" y="196" width="112" height="56" rx="6"/>
   <text x="68" y="229" text-anchor="middle">签合同</text>
-
   <rect class="box-focal" x="12" y="292" width="112" height="144" rx="6"/>
   <text class="t-accent" x="68" y="358" text-anchor="middle">出事了</text>
   <text class="t-accent" x="68" y="378" text-anchor="middle">申请理赔</text>
-
   <!-- 右列：可能出的问题 -->
   <rect class="box-soft" x="144" y="36" width="204" height="56" rx="6"/>
   <text x="156" y="60">被说成“存钱”“什么都保”</text>
   <text class="t-sub" x="156" y="80">合同里其实不是这么写的</text>
-
   <rect class="box-soft" x="144" y="116" width="204" height="56" rx="6"/>
   <text x="156" y="140">没看清问题就勾“否”</text>
   <text class="t-sub" x="156" y="160">或者业务员代填、没给你看</text>
-
   <rect class="box-soft" x="144" y="196" width="204" height="56" rx="6"/>
   <text x="156" y="220">没留意合同写了哪些不管</text>
   <text class="t-sub" x="156" y="240">比如等待期、免赔额、免责</text>
-
   <rect class="box-caution" x="144" y="292" width="204" height="64" rx="6"/>
   <text class="t-caution" x="156" y="319">前面埋下的问题</text>
   <text class="t-caution" x="156" y="341">在这一步暴露，可能被拒赔</text>
-
   <rect class="box-caution" x="144" y="376" width="204" height="60" rx="6"/>
   <text class="t-caution" x="156" y="401">保险公司这边也会出问题</text>
   <text class="t-sub" x="156" y="422">卖时不审核，理赔才挑毛病</text>

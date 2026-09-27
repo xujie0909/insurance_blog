@@ -3,7 +3,7 @@
 用法：
     python writing/scripts/check_ai_words.py content/handbook/basics/xxx.md
 
-只扫描正文，跳过 front matter、代码块和 HTML/SVG 标签内部。
+只扫描正文，跳过 front matter、代码块、HTML/SVG 标签内部和“参考资料”一节。
 禁用词后面括号里的说明（如“标题除外”）只作提示，不参与匹配。
 """
 
@@ -44,6 +44,9 @@ def body_lines(path: Path):
     in_code = False
     for n in range(i, len(lines)):
         line = lines[n]
+        # 参考资料里是文件名、产品名，不检查
+        if line.strip().startswith("## 参考资料"):
+            break
         if line.strip().startswith("```"):
             in_code = not in_code
             continue
