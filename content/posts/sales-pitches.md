@@ -1,9 +1,9 @@
 ---
 title: "“马上停售”“跟存款一样”“什么都能赔”：听到这些话，先停一下"
 description: "监管部门多次点名过的几类保险销售话术：拿存款、理财的名义卖保险，拿分红率跟存款利率比，炒作停售，承诺什么都赔，说病史不用写，首月 0 元，全额退保。每一类讲清它哪里不对、听到时怎么应对。"
-date: 2026-10-02
-lastmod: 2026-10-02
-reviewed: 2026-10-02
+date: 2026-09-29
+lastmod: 2026-09-29
+reviewed: 2026-09-29
 categories: ["投保避坑"]
 tags: ["销售误导", "销售话术", "代理退保"]
 ShowToc: true
@@ -115,10 +115,10 @@ ShowToc: true
 
 ## 参考资料
 
-1. 中国银保监会消费者权益保护局：[关于防范保险销售误导的风险提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1071714&itemId=4100&generaltype=0)（2022 年第 5 期，2022-09-06，访问于 2026-10-02）
-2. 中国银保监会消费者权益保护局：[关于防范利用自媒体平台误导宣传的风险提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=357802&itemId=4100&generaltype=0)（2019-01-08，访问于 2026-10-02）
-3. 中国银保监会消费者权益保护局：[关于防范“套路”营销行为的风险提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1033455&itemId=4100&generaltype=0)（2022 年首期，2022 年 1 月；正文按[中银保险转载](https://www.bankofchina.com/bocins/cusser/cs5/202202/t20220223_20763717.html)核对，访问于 2026-10-02）
-4. 中国银保监会消费者权益保护局：[关于防范“代理退保”等风险的提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1018378&itemId=915&generaltype=0)（2021 年第 6 期，2021-11-16，访问于 2026-10-02）
+1. 中国银保监会消费者权益保护局：[关于防范保险销售误导的风险提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1071714&itemId=4100&generaltype=0)（2022 年第 5 期，2022-09-06，访问于 2026-09-29）
+2. 中国银保监会消费者权益保护局：[关于防范利用自媒体平台误导宣传的风险提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=357802&itemId=4100&generaltype=0)（2019-01-08，访问于 2026-09-29）
+3. 中国银保监会消费者权益保护局：[关于防范“套路”营销行为的风险提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1033455&itemId=4100&generaltype=0)（2022 年首期，2022 年 1 月；正文按[中银保险转载](https://www.bankofchina.com/bocins/cusser/cs5/202202/t20220223_20763717.html)核对，访问于 2026-09-29）
+4. 中国银保监会消费者权益保护局：[关于防范“代理退保”等风险的提示](https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1018378&itemId=915&generaltype=0)（2021 年第 6 期，2021-11-16，访问于 2026-09-29）
 5. 《中华人民共和国保险法》（2015 年修正）第十六条、第一百一十六条、第一百三十一条（禁止返佣、禁止诱导不如实告知），[国家市场监督管理总局转载全文](https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_4c715a53f3d4402c89f62ae77809f638.html)（访问于 2026-09-29）
 6. 国家金融监督管理总局：[保险销售行为管理办法](https://www.gov.cn/zhengce/202310/content_6907619.htm)（2023 年第 2 号令）第二十三条（访问于 2026-09-29）
 7. 原中国银保监会办公厅：[商业银行代理保险业务管理办法](https://www.gov.cn/zhengce/zhengceku/2019-12/03/content_5457853.htm)（银保监办发〔2019〕179 号）第三十条、第三十一条、第四十九条（访问于 2026-09-29）

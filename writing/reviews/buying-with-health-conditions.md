@@ -96,7 +96,7 @@ started: 2026-09-29
 | 图风格一致 | 不适用 | — |
 | 连线 | 不适用 | — |
 
-截图：writing/screenshots/posts_buying-with-health-conditions/（2026-10-02）
+截图：writing/screenshots/posts_buying-with-health-conditions/（2026-09-29）
 
 ## 交给作者预览时的待决事项
 
