@@ -158,7 +158,7 @@ ShowToc: true
 ## 下一步读什么
 
 - 弄清楚一份保单里投保人、被保险人、受益人分别是谁，读[《投保人、被保险人、受益人，分别是谁？》](/posts/policy-roles/)。
-- 想知道具体有哪些险种、各自管什么，读讲各个险种的文章（还在写）。
+- 想知道具体有哪些险种、各自管什么，读[《百万医疗险是什么》](/posts/million-medical-insurance/)、[《重疾险是什么》](/posts/critical-illness-insurance/)、[《意外险是什么》](/posts/accident-insurance/)、[《定期寿险和终身寿险》](/posts/life-insurance/)、[《惠民保是什么》](/posts/huiminbao/)。
 
 ## 参考资料
 

@@ -125,7 +125,7 @@ ShowToc: true
 ## 下一步读什么
 
 - 想先弄明白保险是怎么运作的，读[《保险到底是什么》](/posts/what-is-insurance/)。
-- 想知道重疾险、医疗险、寿险各管什么，读讲各个险种的文章（还在写）。
+- 想知道重疾险、医疗险、寿险各管什么，读[《重疾险是什么》](/posts/critical-illness-insurance/)、[《百万医疗险是什么》](/posts/million-medical-insurance/)、[《定期寿险和终身寿险》](/posts/life-insurance/)。
 
 ## 参考资料
 

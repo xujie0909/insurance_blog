@@ -162,7 +162,7 @@ ShowToc: true
 - <strong>续保不一定有保证：</strong>很多一年一买的医疗险不保证续保，停售或者条件变了，明年可能买不到同样的保障。年纪越大、身体越差，断保后越难再买上。挑的时候看条款里有没有写“保证续保”和保证多少年。
 - <strong>目录外的药也不是全报：</strong>各产品对能报的药和治疗有自己的规定，看条款。
 
-这些限制在[《保险是骗人的吗》](/posts/is-insurance-a-scam/)和讲合同术语的文章（还在写）里细讲。
+这些限制在[《保险是骗人的吗》](/posts/is-insurance-a-scam/)，以及[《健康告知和两年不可抗辩》](/posts/health-disclosure-incontestability/)、[《等待期、犹豫期、宽限期》](/posts/waiting-cooling-grace-periods/)、[《免赔额和赔付比例》](/posts/deductible-and-coinsurance/)、[《免责条款》](/posts/exclusions/)里细讲。
 
 ## 怎么判断自己要不要买
 
@@ -197,7 +197,7 @@ ShowToc: true
 ## 下一步读什么
 
 - 想先弄明白保险是怎么运作的，读[《保险到底是什么》](/posts/what-is-insurance/)。
-- 想知道百万医疗险、重疾险、惠民保分别怎么选，读讲各个险种的文章（还在写）。
+- 想知道百万医疗险、重疾险、惠民保分别怎么选，读[《百万医疗险是什么》](/posts/million-medical-insurance/)、[《重疾险是什么》](/posts/critical-illness-insurance/)、[《惠民保是什么》](/posts/huiminbao/)。
 
 ## 参考资料
 
