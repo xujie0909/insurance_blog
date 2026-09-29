@@ -47,10 +47,20 @@
 .post-content figure.fig-narrow svg { max-width: 420px; }
 
 /* 手机上表格收回屏幕宽度内，不横向滚动 */
+/* 表格在所有宽度下都收进正文栏、单元格内换行，避免宽表在桌面上被裁掉最后一列 */
+.post-content table { display: table; width: 100%; }
+.post-content table th,
+.post-content table td { white-space: normal; word-break: break-word; }
 @media screen and (max-width: 600px) {
     .post-content table { display: table; width: 100%; table-layout: fixed; }
     .post-content table th,
     .post-content table td { min-width: 0; white-space: normal; word-break: break-word; font-size: 15px; padding: 8px; }
+    /* 两列表格（短标签 + 长说明）固定第一列宽度；三列及以上按内容分配列宽 */
+    .post-content table:not(:has(tr > :nth-child(3))) th:first-child,
+    .post-content table:not(:has(tr > :nth-child(3))) td:first-child { width: 26%; }
+    .post-content table:has(tr > :nth-child(3)) { table-layout: auto; }
+    /* 主题给 td 的选择器优先级更高（min-width: 80px），这里用同级选择器覆盖 */
+    .post-content table:not(.highlighttable, .highlight table, .gist .highlight) td { min-width: 0; padding: 8px; font-size: 15px; }
 }
 .post-content .fig-scroll svg { min-width: 560px; }
 
@@ -86,19 +96,6 @@
     color: var(--secondary);
 }
 
-/* 首页“从这里开始”入口 */
-.start-here {
-    display: block;
-    margin: 18px 0 4px;
-    padding: 16px 18px;
-    border: 1px solid var(--fig-accent);
-    border-radius: 8px;
-    background: var(--fig-accent-tint);
-    color: var(--primary);
-    text-decoration: none;
-}
-.start-here strong { display: block; font-size: 17px; }
-.start-here span { font-size: 14px; color: var(--secondary); }
 
 /* ========== SVG 图示语义类（写图时只用这些类，不写死颜色） ========== */
 .fig svg text { fill: var(--fig-ink); font-size: 14px; }
@@ -125,4 +122,3 @@
 .fig svg .fill-caution { fill: var(--fig-caution); }
 .fig svg .fill-muted { fill: var(--fig-muted); }
 .fig svg .fill-soft { fill: var(--fig-paper-2); }
-.start-here, .start-here strong, .start-here span { text-decoration: none; box-shadow: none; }

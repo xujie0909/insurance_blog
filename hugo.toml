@@ -25,9 +25,7 @@ paginate = 10
 
 [params.homeInfoParams]
   Title = "欢迎来到保险知识博客"
-  Content = """这里有最实用的保险攻略，帮你少踩坑、买对险。
-
-<a class="start-here" href="/posts/what-is-insurance/"><strong>第一次了解保险？从这里开始</strong><span>先读《保险到底是什么》，每篇末尾都会告诉你下一篇读什么</span></a>"""
+  Content = "这里有最实用的保险攻略，帮你少踩坑、买对险。"
 
 [[params.socialIcons]]
   name = "github"
